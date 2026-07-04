@@ -167,7 +167,7 @@ footer {
   display: grid;
   grid-template-columns: 1.3fr 0.8fr 0.8fr 0.8fr;
   gap: 40px;
-  padding-bottom: 50px;
+  padding-bottom: 15px;
   border-bottom: 1px solid var(--line-dark);
 }
 
@@ -200,7 +200,7 @@ footer {
 .foot-bottom {
   display: flex;
   justify-content: space-between;
-  padding-top: 26px;
+  padding-top: 16px;
   font-size: 12px;
   color: var(--steel);
   font-family: var(--font-mono);
