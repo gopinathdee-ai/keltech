@@ -79,10 +79,10 @@ export default function Navigation() {
               marginTop: '0',
               zIndex: 10,
             }}>
-              <a href="/products#handhelds" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Handhelds</a>
-              <a href="/products#mobiles" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Mobiles</a>
-              <a href="/products#repeaters" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Repeaters</a>
-              <a href="/products#applications" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none' }}>Applications</a>
+              <a href="/products#handhelds" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.08)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>Handhelds</a>
+              <a href="/products#mobiles" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.08)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>Mobiles</a>
+              <a href="/products#repeaters" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.08)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>Repeaters</a>
+              <a href="/products#applications" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.08)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>Applications</a>
             </div>
           )}
         </div>
@@ -115,9 +115,9 @@ export default function Navigation() {
               marginTop: '0',
               zIndex: 10,
             }}>
-              <a href="/rentals/equipment" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Equipment</a>
-              <a href="/rentals/guarantee-policy" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Guarantee Policy</a>
-              <a href="/terms-conditions" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none' }}>Terms &amp; Conditions</a>
+              <a href="/rentals/equipment" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.08)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>Equipment</a>
+              <a href="/rentals/guarantee-policy" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.08)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>Guarantee Policy</a>
+              <a href="/terms-conditions" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.08)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>Terms &amp; Conditions</a>
             </div>
           )}
         </div>
@@ -150,9 +150,9 @@ export default function Navigation() {
               marginTop: '0',
               zIndex: 10,
             }}>
-              <a href="/services/licensing" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Licensing</a>
-              <a href="/services/wireless-networking" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Wireless Networking</a>
-              <a href="/services/wide-area-tower-system" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none' }}>Wide Area Tower System</a>
+              <a href="/services/licensing" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.08)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>Licensing</a>
+              <a href="/services/wireless-networking" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.08)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>Wireless Networking</a>
+              <a href="/services/wide-area-tower-system" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.08)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>Wide Area Tower System</a>
             </div>
           )}
         </div>
@@ -185,9 +185,9 @@ export default function Navigation() {
               marginTop: '0',
               zIndex: 10,
             }}>
-              <a href="/about-us" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Our Story</a>
-              <a href="/contact-us" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Get in Touch</a>
-              <a href="/promotions" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none' }}>What&apos;s New</a>
+              <a href="/about-us" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.08)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>Our Story</a>
+              <a href="/contact-us" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.08)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>Get in Touch</a>
+              <a href="/promotions" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', cursor: 'pointer' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.08)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}>What&apos;s New</a>
             </div>
           )}
         </div>
