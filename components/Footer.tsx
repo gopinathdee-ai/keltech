@@ -52,7 +52,7 @@ export default function Footer() {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          paddingTop: '15px',
+          paddingTop: '18px',
           paddingBottom: '20px',
           fontSize: '12px',
           fontFamily: 'var(--font-mono)',
