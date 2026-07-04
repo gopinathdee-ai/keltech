@@ -3,8 +3,8 @@ import Navigation from './Navigation';
 export default function Header() {
   return (
     <header style={{
-      borderBottom: '1px solid var(--line-light)',
-      backgroundColor: 'var(--paper)',
+      borderBottom: '1px solid var(--line-dark)',
+      backgroundColor: 'var(--ink)',
     }}>
       <div style={{
         backgroundColor: 'var(--ink-soft)',

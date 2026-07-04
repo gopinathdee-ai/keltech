@@ -23,13 +23,14 @@ export default function Navigation() {
             fontWeight: '600',
             fontSize: '14px',
             letterSpacing: '0.05em',
+            color: 'var(--paper-dim)',
           }}>KELTECH</span>
           <span className="brand-sub" style={{
             fontFamily: 'var(--font-display)',
             fontWeight: '500',
             fontSize: '10px',
             letterSpacing: '0.1em',
-            color: 'var(--steel)',
+            color: 'var(--paper-dim)',
           }}>COMMUNICATIONS</span>
         </div>
       </Link>
@@ -40,7 +41,7 @@ export default function Navigation() {
           onMouseLeave={() => setActiveDropdown(null)}>
           <Link href="/products" style={{
             textDecoration: 'none',
-            color: 'var(--ink)',
+            color: 'var(--paper-dim)',
             fontWeight: '500',
           }}>
             Products
@@ -166,7 +167,7 @@ export default function Navigation() {
       </div>
 
       <div className="nav-right" style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-        <span className="nav-phone" style={{ fontSize: '14px', color: 'var(--steel)' }}>☎ 1-800-449-5707</span>
+        <span className="nav-phone" style={{ fontSize: '14px', color: 'var(--paper-dim)' }}>☎ 1-800-449-5707</span>
         <Link href="/quote" className="btn btn-amber" style={{
           padding: '10px 20px',
           backgroundColor: 'var(--amber)',
