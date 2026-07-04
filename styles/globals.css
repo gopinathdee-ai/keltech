@@ -717,10 +717,6 @@ section {
 }
 
 @media (max-width: 920px) {
-  .nav-links {
-    display: none;
-  }
-
   .hero-grid {
     grid-template-columns: 1fr;
   }
