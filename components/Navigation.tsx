@@ -76,7 +76,7 @@ export default function Navigation() {
               display: 'flex',
               flexDirection: 'column',
               gap: '0',
-              marginTop: '8px',
+              marginTop: '0',
               zIndex: 10,
             }}>
               <a href="/products#handheels" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Handheels</a>
@@ -112,7 +112,7 @@ export default function Navigation() {
               display: 'flex',
               flexDirection: 'column',
               gap: '0',
-              marginTop: '8px',
+              marginTop: '0',
               zIndex: 10,
             }}>
               <a href="#" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Equipment</a>
@@ -147,7 +147,7 @@ export default function Navigation() {
               display: 'flex',
               flexDirection: 'column',
               gap: '0',
-              marginTop: '8px',
+              marginTop: '0',
               zIndex: 10,
             }}>
               <a href="/services/licensing" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Licensing</a>
@@ -182,7 +182,7 @@ export default function Navigation() {
               display: 'flex',
               flexDirection: 'column',
               gap: '0',
-              marginTop: '8px',
+              marginTop: '0',
               zIndex: 10,
             }}>
               <a href="/about-us" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Our Story</a>
