@@ -69,7 +69,7 @@ export default function Navigation() {
               position: 'absolute',
               top: '100%',
               left: '0',
-              backgroundColor: 'var(--paper)',
+              backgroundColor: 'var(--ink)',
               borderRadius: '4px',
               boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
               minWidth: '200px',
@@ -79,10 +79,10 @@ export default function Navigation() {
               marginTop: '0',
               zIndex: 10,
             }}>
-              <a href="/products#handhelds" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Handhelds</a>
-              <a href="/products#mobiles" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Mobiles</a>
-              <a href="/products#repeaters" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Repeaters</a>
-              <a href="/products#applications" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none' }}>Applications</a>
+              <a href="/products#handhelds" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Handhelds</a>
+              <a href="/products#mobiles" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Mobiles</a>
+              <a href="/products#repeaters" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Repeaters</a>
+              <a href="/products#applications" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none' }}>Applications</a>
             </div>
           )}
         </div>
@@ -105,7 +105,7 @@ export default function Navigation() {
               position: 'absolute',
               top: '100%',
               left: '0',
-              backgroundColor: 'var(--paper)',
+              backgroundColor: 'var(--ink)',
               borderRadius: '4px',
               boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
               minWidth: '200px',
@@ -115,9 +115,9 @@ export default function Navigation() {
               marginTop: '0',
               zIndex: 10,
             }}>
-              <a href="/rentals/equipment" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Equipment</a>
-              <a href="/rentals/guarantee-policy" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Guarantee Policy</a>
-              <a href="/terms-conditions" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none' }}>Terms &amp; Conditions</a>
+              <a href="/rentals/equipment" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Equipment</a>
+              <a href="/rentals/guarantee-policy" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Guarantee Policy</a>
+              <a href="/terms-conditions" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none' }}>Terms &amp; Conditions</a>
             </div>
           )}
         </div>
@@ -140,7 +140,7 @@ export default function Navigation() {
               position: 'absolute',
               top: '100%',
               left: '0',
-              backgroundColor: 'var(--paper)',
+              backgroundColor: 'var(--ink)',
               borderRadius: '4px',
               boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
               minWidth: '200px',
@@ -150,9 +150,9 @@ export default function Navigation() {
               marginTop: '0',
               zIndex: 10,
             }}>
-              <a href="/services/licensing" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Licensing</a>
-              <a href="/services/wireless-networking" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Wireless Networking</a>
-              <a href="/services/wide-area-tower-system" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none' }}>Wide Area Tower System</a>
+              <a href="/services/licensing" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Licensing</a>
+              <a href="/services/wireless-networking" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Wireless Networking</a>
+              <a href="/services/wide-area-tower-system" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none' }}>Wide Area Tower System</a>
             </div>
           )}
         </div>
@@ -175,7 +175,7 @@ export default function Navigation() {
               position: 'absolute',
               top: '100%',
               left: '0',
-              backgroundColor: 'var(--paper)',
+              backgroundColor: 'var(--ink)',
               borderRadius: '4px',
               boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
               minWidth: '200px',
@@ -185,9 +185,9 @@ export default function Navigation() {
               marginTop: '0',
               zIndex: 10,
             }}>
-              <a href="/about-us" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Our Story</a>
-              <a href="/contact-us" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Get in Touch</a>
-              <a href="/promotions" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none' }}>What&apos;s New</a>
+              <a href="/about-us" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Our Story</a>
+              <a href="/contact-us" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Get in Touch</a>
+              <a href="/promotions" style={{ padding: '12px 16px', color: 'var(--paper-dim)', textDecoration: 'none' }}>What&apos;s New</a>
             </div>
           )}
         </div>
