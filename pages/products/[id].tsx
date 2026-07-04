@@ -36,7 +36,7 @@ export default function ProductDetail() {
         <title>{product.name} — Keltech Communications</title>
       </Head>
 
-      <div className="wrap" style={{ maxWidth: '1180px', margin: '0 auto', padding: '30px 28px' }}>
+      <div className="wrap" style={{ maxWidth: '1180px', margin: '0 auto', padding: '20px 28px' }}>
         <div className="crumb" style={{ marginBottom: '40px' }}>Home / Products / {product.cat} / {product.name}</div>
 
         <section className="detail" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '60px', padding: '40px 0' }}>

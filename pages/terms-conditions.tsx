@@ -7,7 +7,7 @@ export default function TermsConditions() {
         <title>Terms & Conditions — Keltech Communications</title>
       </Head>
 
-      <div style={{ maxWidth: '920px', margin: '0 auto', padding: '30px 28px' }}>
+      <div style={{ maxWidth: '920px', margin: '0 auto', padding: '20px 28px' }}>
         <div className="crumb" style={{ marginBottom: '40px' }}>Home / Terms &amp; Conditions</div>
 
         <section style={{ marginBottom: '60px' }}>

@@ -42,7 +42,7 @@ export default function Quote() {
         <title>Request a Quote — Keltech Communications</title>
       </Head>
 
-      <div style={{ maxWidth: '640px', margin: '0 auto', padding: '30px 28px' }}>
+      <div style={{ maxWidth: '640px', margin: '0 auto', padding: '20px 28px' }}>
         <div style={{ marginBottom: '40px' }}>
           <span className="eyebrow">GET STARTED</span>
           <h1 style={{ fontSize: '32px', margin: '12px 0 16px' }}>Request a Quote</h1>

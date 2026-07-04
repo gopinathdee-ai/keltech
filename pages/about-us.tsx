@@ -8,8 +8,8 @@ export default function AboutUs() {
         <title>About Us — Keltech Communications</title>
       </Head>
 
-      <div style={{ maxWidth: '920px', margin: '0 auto', padding: '30px 28px' }}>
-        <div className="crumb" style={{ marginBottom: '40px' }}>Home / About Us</div>
+      <div style={{ maxWidth: '920px', margin: '0 auto', padding: '20px 28px' }}>
+        <div className="crumb" style={{ marginBottom: '20px' }}>Home / About Us</div>
 
         <section id="story" style={{ marginBottom: '40px' }}>
           <div style={{ marginBottom: '30px' }}>
