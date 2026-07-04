@@ -1,22 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 :root {
-  --ink: #1a1a1a;
-  --ink-soft: #4a4a4a;
-  --paper: #ffffff;
-  --paper-dim: #f5f5f5;
+  --ink: #ffffff;
+  --ink-soft: #b0b0b0;
+  --paper: #1a1a1a;
+  --paper-dim: #2a2a2a;
   --pine: #2d5016;
-  --steel: #5b7480;
+  --steel: #888888;
   --amber: #e8a23d;
-  --amber-dim: #f5e8d8;
-  --rust: #a84e2d;
+  --amber-dim: #3a2f1f;
+  --rust: #d4623a;
 
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'IBM Plex Sans', sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
 
-  --line-light: #e8e8e8;
-  --line-dark: #d0d0d0;
+  --line-light: #404040;
+  --line-dark: #333333;
 }
 
 * {
@@ -113,13 +113,13 @@ a:hover {
 }
 
 .btn-outline-dark {
-  border: 1px solid var(--ink);
-  color: var(--ink);
+  border: 1px solid #ffffff;
+  color: #ffffff;
   background-color: transparent;
 }
 
 .btn-outline-dark:hover {
-  background-color: var(--paper-dim);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .crumb {
@@ -131,7 +131,7 @@ a:hover {
 .page-hero {
   padding: 80px 0;
   text-align: center;
-  background: linear-gradient(135deg, var(--paper) 0%, var(--paper-dim) 100%);
+  background: var(--paper);
 }
 
 .page-hero p {
@@ -144,7 +144,7 @@ a:hover {
 footer {
   border-top: 1px solid var(--line-dark);
   padding-top: 0;
-  background-color: var(--paper);
+  background-color: #0f0f0f;
   margin-top: 80px;
 }
 
@@ -170,7 +170,7 @@ footer .wrap {
 }
 
 .foot-brand p {
-  color: var(--ink-soft);
+  color: #888888;
   font-size: 14px;
   line-height: 1.6;
   margin-bottom: 0;
@@ -187,7 +187,7 @@ footer .wrap {
 .foot-col a {
   display: block;
   margin-bottom: 8px;
-  color: var(--ink);
+  color: #ffffff;
   font-weight: 400;
   font-size: 14px;
 }
@@ -212,7 +212,7 @@ footer .wrap {
 
 /* Header */
 header {
-  border-bottom: 1px solid var(--line-light);
+  border-bottom: 1px solid var(--line-dark);
   background-color: var(--paper);
 }
 
@@ -269,7 +269,7 @@ nav {
 
 .nav-item > a {
   text-decoration: none;
-  color: var(--ink);
+  color: #1a1a1a;
   font-weight: 500;
 }
 
@@ -290,10 +290,10 @@ nav {
 
 .dropdown a {
   padding: 12px 16px;
-  color: var(--ink);
+  color: #1a1a1a;
   text-decoration: none;
   font-weight: 400;
-  border-bottom: 1px solid var(--line-light);
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .dropdown a:last-child {
@@ -308,7 +308,7 @@ nav {
 
 .nav-phone {
   font-size: 14px;
-  color: var(--steel);
+  color: #666666;
 }
 
 /* Demo Badge */
