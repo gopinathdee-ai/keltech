@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keltech Communications — Rural Alberta Wireless Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10171B;
+    --ink-soft:#1A252B;
+    --paper:#EFEDE4;
+    --paper-dim:#E4E1D4;
+    --pine:#2B3B36;
+    --steel:#5B7480;
+    --amber:#E8A23D;
+    --amber-dim:#C77F1F;
+    --rust:#C1531B;
+    --line-dark:rgba(239,237,228,0.14);
+    --line-light:rgba(16,23,27,0.13);
+    --font-display:'Space Grotesk', sans-serif;
+    --font-body:'IBM Plex Sans', sans-serif;
+    --font-mono:'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--paper); color:var(--ink); font-family:var(--font-body); line-height:1.5; -webkit-font-smoothing:antialiased;}
+  img,svg{display:block; max-width:100%;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 28px;}
+  .eyebrow{font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--amber-dim); display:flex; align-items:center; gap:10px;}
+  .eyebrow::before{content:''; width:18px; height:1px; background:var(--amber-dim); display:inline-block;}
+  h1,h2,h3{font-family:var(--font-display); font-weight:600; letter-spacing:-0.01em;}
+  :focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){*{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}}
+
+  /* DEMO WATERMARK */
+  .demo-badge{
+    position:fixed; bottom:20px; right:20px; z-index:999;
+    background:var(--ink); color:var(--amber);
+    font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em;
+    padding:10px 16px; border:1px solid var(--amber-dim);
+    box-shadow:0 4px 18px rgba(0,0,0,0.35);
+    display:flex; align-items:center; gap:8px;
+    text-transform:uppercase;
+  }
+  .demo-badge::before{
+    content:''; width:7px; height:7px; border-radius:50%;
+    background:var(--rust); display:inline-block;
+    animation:blink 2s ease-in-out infinite;
+  }
+  @keyframes blink{0%,100%{opacity:1;} 50%{opacity:0.3;}}
+  @media (max-width:560px){
+    .demo-badge{bottom:12px; right:12px; left:12px; justify-content:center; font-size:10px;}
+  }
+  .disclaimer-strip{
+    background:var(--ink-soft); color:var(--steel); text-align:center;
+    font-family:var(--font-mono); font-size:11.5px; letter-spacing:0.02em;
+    padding:10px 20px; border-bottom:1px solid var(--line-dark);
+  }
+  .disclaimer-strip strong{color:var(--amber-dim);}
+
+  header{position:sticky; top:0; z-index:50; background:var(--ink); border-bottom:1px solid var(--line-dark);}
+  nav.wrap{display:flex; align-items:center; justify-content:space-between; height:76px;}
+  .brand{display:flex; flex-direction:column; line-height:1.05;}
+  .brand-mark{font-family:var(--font-display); font-weight:700; font-size:22px; color:var(--paper); letter-spacing:0.02em;}
+  .brand-sub{font-family:var(--font-mono); font-size:10px; letter-spacing:0.22em; color:var(--steel); margin-top:3px;}
+  .nav-links{display:flex; align-items:center; gap:34px;}
+  .nav-item{position:relative;}
+  .nav-links > .nav-item > a{font-size:14px; color:var(--paper-dim); font-weight:500; position:relative; padding:26px 0; display:inline-block;}
+  .nav-links > .nav-item > a::after{content:''; position:absolute; left:0; bottom:22px; width:0; height:1px; background:var(--amber); transition:width 0.2s ease;}
+  .nav-links > .nav-item:hover > a::after{width:100%;}
+  .dropdown{
+    position:absolute; top:100%; left:0; background:var(--ink-soft); border:1px solid var(--line-dark);
+    min-width:200px; padding:10px 0; opacity:0; visibility:hidden; transform:translateY(4px);
+    transition:opacity 0.15s ease, transform 0.15s ease; z-index:60;
+  }
+  .nav-item:hover .dropdown{opacity:1; visibility:visible; transform:translateY(0);}
+  .dropdown a{display:block; padding:9px 18px; font-size:13px; color:var(--paper-dim);}
+  .dropdown a:hover{color:var(--amber); background:rgba(255,255,255,0.03);}
+  .nav-right{display:flex; align-items:center; gap:22px;}
+  .nav-phone{font-family:var(--font-mono); font-size:13px; color:var(--paper-dim); display:flex; align-items:center; gap:8px;}
+  .btn{display:inline-flex; align-items:center; gap:8px; font-family:var(--font-body); font-weight:600; font-size:14px; padding:11px 20px; border-radius:2px; border:1px solid transparent; cursor:pointer; transition:transform 0.15s ease, background 0.15s ease;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn-amber{background:var(--amber); color:var(--ink);}
+  .btn-amber:hover{background:#f0ae52;}
+  .btn-outline{border-color:var(--line-dark); color:var(--paper);}
+  .btn-outline:hover{border-color:var(--amber);}
+  .btn-outline-dark{border-color:var(--line-light); color:var(--ink);}
+  .btn-outline-dark:hover{border-color:var(--rust); color:var(--rust);}
+
+  .hero{position:relative; background:var(--ink); color:var(--paper); overflow:hidden; padding:100px 0 80px;}
+  .hero-topo{position:absolute; inset:0; opacity:0.5; pointer-events:none;}
+  .hero-rings{position:absolute; right:-140px; top:50%; transform:translateY(-50%); width:600px; height:600px; pointer-events:none;}
+  .hero-rings circle{fill:none; stroke:var(--amber); stroke-opacity:0.35;}
+  .ring-pulse{animation:pulse 4.5s ease-out infinite; transform-origin:center;}
+  .ring-pulse.r2{animation-delay:1.5s;}
+  .ring-pulse.r3{animation-delay:3s;}
+  @keyframes pulse{0%{transform:scale(0.55); opacity:0.9;} 100%{transform:scale(1); opacity:0;}}
+  .hero-grid{position:relative; z-index:2; display:grid; grid-template-columns:1.15fr 0.85fr; gap:40px; align-items:end;}
+  .hero h1{font-size:clamp(32px,4.2vw,52px); line-height:1.1; margin:20px 0 22px; max-width:15ch;}
+  .hero h1 em{font-style:normal; color:var(--amber);}
+  .hero p.lede{font-size:16.5px; color:var(--paper-dim); max-width:48ch; margin-bottom:32px;}
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:52px;}
+  .hero-facts{display:flex; gap:0; border-top:1px solid var(--line-dark); padding-top:24px;}
+  .hero-fact{flex:1; padding-right:24px; border-right:1px solid var(--line-dark);}
+  .hero-fact:last-child{border-right:none;}
+  .hero-fact .num{font-family:var(--font-mono); font-size:20px; color:var(--amber); display:block;}
+  .hero-fact .lab{font-size:11.5px; color:var(--steel); margin-top:4px;}
+  .hero-visual{position:relative; align-self:stretch; display:flex; align-items:flex-end; justify-content:center; min-height:300px;}
+  .tower-badge{font-family:var(--font-mono); font-size:11px; color:var(--steel); position:absolute; letter-spacing:0.08em;}
+  .tower-badge.tb1{top:8%; left:6%;}
+  .tower-badge.tb2{bottom:14%; right:2%; text-align:right;}
+
+  section{padding:92px 0;}
+  .section-head{display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:48px; flex-wrap:wrap;}
+  .section-head h2{font-size:clamp(24px,2.8vw,34px); max-width:20ch; margin-top:12px;}
+  .section-head p{max-width:40ch; color:var(--steel); font-size:14.5px;}
+
+  /* SERVICES */
+  .services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line-light); border:1px solid var(--line-light);}
+  .svc-card{background:var(--paper); padding:32px 28px; min-height:270px; display:flex; flex-direction:column; transition:background 0.2s ease;}
+  .svc-card:hover{background:#fff;}
+  .svc-tag{font-family:var(--font-mono); font-size:11px; color:var(--rust); letter-spacing:0.1em; margin-bottom:18px;}
+  .svc-card h3{font-size:19px; margin-bottom:12px;}
+  .svc-card p{font-size:14px; color:var(--steel); flex:1;}
+  .svc-link{font-family:var(--font-mono); font-size:12px; margin-top:18px; display:inline-flex; align-items:center; gap:6px;}
+  .svc-link .arrow{transition:transform 0.15s ease;}
+  .svc-card:hover .arrow{transform:translateX(4px);}
+
+  /* PRODUCTS */
+  .products{background:var(--pine); color:var(--paper);}
+  .products .section-head p{color:#B9C7C1;}
+  .prod-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line-dark); border:1px solid var(--line-dark);}
+  .prod-cat{background:var(--ink-soft); padding:26px 22px;}
+  .prod-cat h4{font-family:var(--font-display); font-size:15px; margin-bottom:12px; color:var(--amber);}
+  .prod-cat ul{list-style:none;}
+  .prod-cat li{font-size:13px; color:#B9C7C1; padding:5px 0; border-top:1px solid var(--line-dark);}
+  .prod-cat li:first-child{border-top:none;}
+  .brand-strip{display:flex; gap:14px; margin-top:34px; flex-wrap:wrap;}
+  .brand-pill{font-family:var(--font-mono); font-size:12px; letter-spacing:0.08em; border:1px solid var(--line-dark); padding:8px 16px; color:var(--paper-dim);}
+
+  /* RENTALS */
+  .rentals{display:grid; grid-template-columns:0.9fr 1.1fr; gap:0; border:1px solid var(--line-light);}
+  .rentals-copy{padding:50px 44px; display:flex; flex-direction:column; justify-content:center;}
+  .rentals-copy h2{font-size:27px; margin-bottom:14px;}
+  .rentals-copy p{color:var(--steel); font-size:14.5px; margin-bottom:24px; max-width:40ch;}
+  .rentals-visual{background:var(--paper-dim); padding:44px; display:grid; grid-template-columns:repeat(1,1fr); gap:14px;}
+  .rental-row{display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line-light); padding-bottom:14px;}
+  .rental-row:last-child{border-bottom:none; padding-bottom:0;}
+  .rental-row .k{font-family:var(--font-mono); font-size:12px; color:var(--steel);}
+  .rental-row .v{font-family:var(--font-display); font-size:14px;}
+
+  /* STORY */
+  .story{display:grid; grid-template-columns:1.2fr 0.8fr; gap:56px; align-items:start;}
+  .story-copy p{color:var(--steel); font-size:15px; margin-bottom:18px; max-width:56ch;}
+  .story-copy p strong{color:var(--ink); font-weight:600;}
+  .story-timeline{border-left:1px solid var(--line-light); padding-left:28px;}
+  .story-milestone{position:relative; padding-bottom:34px;}
+  .story-milestone:last-child{padding-bottom:0;}
+  .story-milestone::before{content:''; position:absolute; left:-33px; top:4px; width:9px; height:9px; border-radius:50%; background:var(--amber); border:2px solid var(--paper);}
+  .story-milestone .yr{font-family:var(--font-mono); font-size:13px; color:var(--rust); display:block; margin-bottom:6px;}
+  .story-milestone .desc{font-size:13.5px; color:var(--steel); max-width:32ch;}
+
+  /* CREDIBILITY */
+  .credibility{background:var(--paper-dim); border-top:1px solid var(--line-light); border-bottom:1px solid var(--line-light); padding:50px 0;}
+  .cred-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; text-align:center;}
+  .cred-item .num{font-family:var(--font-mono); font-size:26px; color:var(--rust);}
+  .cred-item .lab{font-size:12px; color:var(--steel); margin-top:6px;}
+
+  /* CTA / COVERAGE */
+  .coverage{display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center;}
+  .coverage-map{aspect-ratio:4/3; background:var(--paper-dim); border:1px solid var(--line-light); position:relative; overflow:hidden;}
+  .coverage-copy h2{font-size:clamp(24px,2.8vw,32px); margin-bottom:16px; max-width:16ch;}
+  .coverage-copy p{color:var(--steel); font-size:14.5px; margin-bottom:26px; max-width:44ch;}
+
+  footer{background:var(--ink); color:var(--paper); padding:70px 0 30px;}
+  .foot-grid{display:grid; grid-template-columns:1.3fr 0.8fr 0.8fr 0.8fr; gap:40px; padding-bottom:50px; border-bottom:1px solid var(--line-dark);}
+  .foot-brand .brand-mark{margin-bottom:10px;}
+  .foot-brand p{color:var(--steel); font-size:13.5px; max-width:32ch;}
+  .foot-col h4{font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; color:var(--steel); text-transform:uppercase; margin-bottom:16px;}
+  .foot-col a, .foot-col p{display:block; font-size:13.5px; color:var(--paper-dim); margin-bottom:10px;}
+  .foot-bottom{display:flex; justify-content:space-between; padding-top:26px; font-size:12px; color:var(--steel); font-family:var(--font-mono); flex-wrap:wrap; gap:10px;}
+
+  @media (max-width:920px){
+    .nav-links{display:none;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-visual{display:none;}
+    .services-grid{grid-template-columns:1fr;}
+    .prod-grid{grid-template-columns:repeat(2,1fr);}
+    .cred-grid{grid-template-columns:repeat(2,1fr); row-gap:28px;}
+    .rentals{grid-template-columns:1fr;}
+    .story{grid-template-columns:1fr; gap:36px;}
+    .coverage{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:repeat(2,1fr); row-gap:30px;}
+  }
+  @media (max-width:560px){
+    .prod-grid{grid-template-columns:1fr;}
+    .cred-grid{grid-template-columns:1fr;}
+    .hero-facts{flex-wrap:wrap; gap:18px;}
+    .hero-fact{flex:1 1 40%; border-right:none; padding-right:0;}
+    .foot-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer-strip">
+  <strong>Unofficial concept redesign</strong> — created independently as a design demo. Not affiliated with, endorsed by, or published on behalf of Keltech Communications Inc.
+</div>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">
+      <span class="brand-mark">KELTECH</span>
+      <span class="brand-sub">COMMUNICATIONS</span>
+    </div>
+    <div class="nav-links">
+      <div class="nav-item">
+        <a href="products.html">Products</a>
+        <div class="dropdown">
+          <a href="products.html#handhelds">Handhelds</a>
+          <a href="products.html#mobiles">Mobiles</a>
+          <a href="products.html#repeaters">Repeaters</a>
+          <a href="products.html#applications">Applications</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#rentals">Rentals</a>
+        <div class="dropdown">
+          <a href="#">Equipment</a>
+          <a href="#">Guarantee Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#services">Services</a>
+        <div class="dropdown">
+          <a href="#">Licensing</a>
+          <a href="#">Wireless Networking</a>
+          <a href="#">Wide Area Tower System</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#about">About Us</a>
+        <div class="dropdown">
+          <a href="#">About Our Company</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Promotions</a>
+          <a href="#">Request a Quote</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-right">
+      <span class="nav-phone">☎ 1-800-449-5707</span>
+      <a class="btn btn-amber" href="quote.html">Request a Quote</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <svg class="hero-topo" viewBox="0 0 1200 600" preserveAspectRatio="none" aria-hidden="true">
+    <g fill="none" stroke="#5B7480" stroke-opacity="0.35" stroke-width="1">
+      <path d="M-50,120 C 200,60 400,180 650,110 S 1100,40 1260,120"/>
+      <path d="M-50,190 C 220,140 420,240 660,180 S 1080,110 1260,190"/>
+      <path d="M-50,260 C 240,220 440,300 670,250 S 1060,190 1260,260"/>
+      <path d="M-50,330 C 260,300 460,360 680,320 S 1040,270 1260,330"/>
+      <path d="M-50,400 C 280,380 480,420 690,390 S 1020,350 1260,400"/>
+    </g>
+  </svg>
+  <svg class="hero-rings" viewBox="0 0 640 640" aria-hidden="true">
+    <circle class="ring-pulse r1" cx="320" cy="320" r="300"/>
+    <circle class="ring-pulse r2" cx="320" cy="320" r="300"/>
+    <circle class="ring-pulse r3" cx="320" cy="320" r="300"/>
+    <circle cx="320" cy="320" r="230" opacity="0.25"/>
+    <circle cx="320" cy="320" r="160" opacity="0.35"/>
+    <circle cx="320" cy="320" r="90" opacity="0.45"/>
+  </svg>
+
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">DRAYTON VALLEY, AB · EST. 1994</span>
+      <h1>Custom communications for the parts of Alberta that <em>don't have a signal.</em></h1>
+      <p class="lede">Keltech Communications designs, licenses and maintains two-way radio, wireless networking and tower infrastructure for rural and remote operations across the province.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-amber" href="quote.html">Request a Quote</a>
+        <a class="btn btn-outline" href="#services">View Services</a>
+      </div>
+      <div class="hero-facts">
+        <div class="hero-fact"><span class="num">1994</span><span class="lab">Operating in Drayton Valley since</span></div>
+        <div class="hero-fact"><span class="num">2003</span><span class="lab">First ISP on Alberta SuperNet, Benalto</span></div>
+        <div class="hero-fact"><span class="num">SECOR</span><span class="lab">Accredited safety program</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <span class="tower-badge tb1">TOWER SITE MGMT</span>
+      <span class="tower-badge tb2">DRAYTON VALLEY, AB</span>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">SERVICES</span>
+        <h2>Three ways we keep a site connected</h2>
+      </div>
+      <p>Licensing, network build, and the tower infrastructure underneath it — handled as one job, not handed off between vendors.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card">
+        <span class="svc-tag">SERVICE / LICENSING</span>
+        <h3>Licensing</h3>
+        <p>Radio frequency licensing handled end to end, so your two-way and SCADA systems are compliant and interference-free from day one.</p>
+        <span class="svc-link">Learn about licensing <span class="arrow">→</span></span>
+      </div>
+      <div class="svc-card">
+        <span class="svc-tag">SERVICE / NETWORKING</span>
+        <h3>Wireless Networking</h3>
+        <p>Local and last-mile wireless networking, including managed dedicated internet access and multi-site VLAN connectivity for remote operations.</p>
+        <span class="svc-link">Learn about networking <span class="arrow">→</span></span>
+      </div>
+      <div class="svc-card">
+        <span class="svc-tag">SERVICE / TOWER SYSTEM</span>
+        <h3>Wide Area Tower System</h3>
+        <p>Tower site management across Alberta — electrical, fiber and SuperNet backhaul, RF interference administration, and self-support tower inspections.</p>
+        <span class="svc-link">Learn about tower services <span class="arrow">→</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="wrap story">
+    <div class="story-copy">
+      <span class="eyebrow">OUR STORY</span>
+      <h2 style="margin:14px 0 22px; font-size:clamp(24px,2.8vw,32px); max-width:18ch;">Locally owned in Drayton Valley since 1994</h2>
+      <p>Keltech Communications Inc. is a locally owned and operated communications company based in Drayton Valley, AB. The office is home base, but <strong>a great deal of field work is performed throughout Alberta</strong> — wherever rural and remote operations need reliable communications.</p>
+      <p>Keltech operates <strong>conventional repeaters at multiple sites across central and western Alberta</strong>, alongside a newer <strong>wide-area Digital MotoTRBO Trunking System</strong> that extends seamless, secure two-way coverage across an even larger area of central-west Alberta — without switching channels.</p>
+      <p>That digital trunking system relies on internet connectivity, which pairs with another line of business: in <strong>2003, Keltech became the first ISP to connect directly to Alberta SuperNet</strong> at Benalto. That connection became the model for a growing number of sites Keltech now owns and manages across the province, bringing wireless internet to rural and remote businesses that otherwise had no connectivity.</p>
+    </div>
+    <div class="story-timeline">
+      <div class="story-milestone">
+        <span class="yr">1994</span>
+        <span class="desc">Keltech Communications founded in Drayton Valley, AB.</span>
+      </div>
+      <div class="story-milestone">
+        <span class="yr">2003</span>
+        <span class="desc">First ISP to connect directly to Alberta SuperNet, at Benalto — later expanded to multiple sites provincewide.</span>
+      </div>
+      <div class="story-milestone">
+        <span class="yr">TODAY</span>
+        <span class="desc">Conventional repeater network plus a wide-area Digital MotoTRBO Trunking System across central-west Alberta. SECOR-accredited safety program.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow" style="color:var(--amber)">PRODUCTS</span>
+        <h2>Two-way radio, applications &amp; accessories</h2>
+      </div>
+      <p>Authorized Motorola and Hytera dealer — mobiles, handhelds, repeaters and the systems that tie them together.</p>
+    </div>
+    <div class="prod-grid">
+      <div class="prod-cat">
+        <h4><a href="products.html#handhelds" style="color:inherit;">Two-Way Radio</a></h4>
+        <ul><li><a href="products.html#mobiles" style="color:inherit;">Mobiles</a></li><li><a href="products.html#handhelds" style="color:inherit;">Handhelds</a></li><li><a href="products.html#repeaters" style="color:inherit;">Repeaters</a></li><li>Intrinsically Safe</li></ul>
+      </div>
+      <div class="prod-cat">
+        <h4><a href="products.html#applications" style="color:inherit;">Applications</a></h4>
+        <ul><li>Gateways</li><li>Dispatch</li><li>Control Stations</li><li>SCADA / Telemetry</li></ul>
+      </div>
+      <div class="prod-cat">
+        <h4>Accessories</h4>
+        <ul><li>Headsets &amp; Earpieces</li><li>Remote Speaker Mics</li><li>Chargers</li><li>Carry Cases</li></ul>
+      </div>
+      <div class="prod-cat">
+        <h4>Brands</h4>
+        <ul><li>Motorola</li><li>Hytera</li></ul>
+      </div>
+    </div>
+    <div class="brand-strip">
+      <span class="brand-pill">MOTOROLA SOLUTIONS — AUTHORIZED DEALER</span>
+      <span class="brand-pill">HYTERA — AUTHORIZED DEALER</span>
+    </div>
+    <a class="btn btn-amber" href="products.html" style="margin-top:32px;">Browse the Full Catalog →</a>
+  </div>
+</section>
+
+<section id="rentals">
+  <div class="wrap rentals">
+    <div class="rentals-copy">
+      <span class="eyebrow">RENTALS</span>
+      <h2>Short and long-term rentals for project work</h2>
+      <p>Repeaters, base and mobile radios, intrinsically safe handhelds and wireless network equipment — including plant turnaround and shutdown rental packages.</p>
+      <a class="btn btn-outline-dark" href="#">See rental terms &amp; guarantee policy →</a>
+    </div>
+    <div class="rentals-visual">
+      <div class="rental-row"><span class="k">EQUIPMENT</span><span class="v">Repeaters, mobiles, handhelds, network gear</span></div>
+      <div class="rental-row"><span class="k">USE CASE</span><span class="v">Plant turnaround / shutdown rentals</span></div>
+      <div class="rental-row"><span class="k">TERM</span><span class="v">Short or long-term</span></div>
+      <div class="rental-row"><span class="k">POLICY</span><span class="v">Guarantee Policy &amp; Terms and Conditions apply</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="credibility" id="about">
+  <div class="wrap">
+    <div class="cred-grid">
+      <div class="cred-item"><span class="num">1994</span><span class="lab">Founded in Drayton Valley, AB</span></div>
+      <div class="cred-item"><span class="num">SECOR</span><span class="lab">Accredited safety program</span></div>
+      <div class="cred-item"><span class="num">2</span><span class="lab">Authorized brands — Motorola &amp; Hytera</span></div>
+      <div class="cred-item"><span class="num">AB</span><span class="lab">Field work performed provincewide</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="coverage">
+  <div class="wrap coverage">
+    <div class="coverage-copy">
+      <span class="eyebrow">SERVICE AREA</span>
+      <h2>Based in Drayton Valley, working across Alberta</h2>
+      <p>Our office is in Drayton Valley, but the majority of our field work happens on-site throughout the province — wherever rural and remote operations need reliable communications.</p>
+      <a class="btn btn-amber" href="quote.html">Request a Quote</a>
+    </div>
+    <div class="coverage-map">
+      <svg viewBox="0 0 400 300" width="100%" height="100%" aria-hidden="true">
+        <rect width="400" height="300" fill="#E4E1D4"/>
+        <g fill="none" stroke="#5B7480" stroke-opacity="0.4" stroke-width="1">
+          <path d="M-10,40 C 90,10 190,70 310,30 S 420,20 430,40"/>
+          <path d="M-10,90 C 100,60 200,120 320,80 S 420,70 430,90"/>
+          <path d="M-10,140 C 110,110 210,170 330,130 S 420,120 430,140"/>
+          <path d="M-10,190 C 120,160 220,220 340,180 S 420,170 430,190"/>
+          <path d="M-10,240 C 130,210 230,270 350,230 S 420,220 430,240"/>
+        </g>
+        <circle cx="140" cy="150" r="4" fill="#C1531B"/>
+        <text x="150" y="154" font-family="IBM Plex Mono" font-size="9" fill="#5B7480">DRAYTON VALLEY (HQ)</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<footer id="quote">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="brand-mark">KELTECH</span>
+        <p>Two-way radio and wireless network solutions for rural and remote Alberta. Authorized Motorola Solutions and Hytera dealer based in Drayton Valley.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Products</h4>
+        <a href="#">Two-Way Radio</a>
+        <a href="#">Applications</a>
+        <a href="#">Accessories</a>
+        <a href="#">Rentals</a>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <a href="#">Licensing</a>
+        <a href="#">Wireless Networking</a>
+        <a href="#">Wide Area Tower System</a>
+      </div>
+      <div class="foot-col">
+        <h4>Reach Us</h4>
+        <p>1-800-449-5707</p>
+        <p>info@keltech.ab.ca</p>
+        <p>6414 50th Ave, Drayton Valley, AB T7A 1R4</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Keltech Communications Inc.</span>
+      <span>About Us · Contact Us · Internet AUP · Policies &amp; Terms · Sitemap</span>
+    </div>
+    <div style="margin-top:20px; padding-top:20px; border-top:1px solid var(--line-dark); font-family:var(--font-mono); font-size:11px; color:var(--steel); text-align:center;">
+      This is an unofficial concept redesign built as a design demo — not affiliated with or published by Keltech Communications Inc.
+    </div>
+  </div>
+</footer>
+
+<div class="demo-badge">DEMO CONCEPT — NOT LIVE</div>
+
+</body>
+</html>

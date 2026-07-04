@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products — Keltech Communications</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10171B; --ink-soft:#1A252B; --paper:#EFEDE4; --paper-dim:#E4E1D4;
+    --pine:#2B3B36; --steel:#5B7480; --amber:#E8A23D; --amber-dim:#C77F1F; --rust:#C1531B;
+    --line-dark:rgba(239,237,228,0.14); --line-light:rgba(16,23,27,0.13);
+    --font-display:'Space Grotesk', sans-serif; --font-body:'IBM Plex Sans', sans-serif; --font-mono:'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--paper); color:var(--ink); font-family:var(--font-body); line-height:1.5; -webkit-font-smoothing:antialiased;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 28px;}
+  .eyebrow{font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--amber-dim); display:flex; align-items:center; gap:10px;}
+  .eyebrow::before{content:''; width:18px; height:1px; background:var(--amber-dim); display:inline-block;}
+  h1,h2,h3{font-family:var(--font-display); font-weight:600; letter-spacing:-0.01em;}
+  :focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+
+  .disclaimer-strip{background:var(--ink-soft); color:var(--steel); text-align:center; font-family:var(--font-mono); font-size:11.5px; padding:10px 20px; border-bottom:1px solid var(--line-dark);}
+  .disclaimer-strip strong{color:var(--amber-dim);}
+  .demo-badge{position:fixed; bottom:20px; right:20px; z-index:999; background:var(--ink); color:var(--amber); font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; padding:10px 16px; border:1px solid var(--amber-dim); box-shadow:0 4px 18px rgba(0,0,0,0.35); display:flex; align-items:center; gap:8px; text-transform:uppercase;}
+  .demo-badge::before{content:''; width:7px; height:7px; border-radius:50%; background:var(--rust); display:inline-block; animation:blink 2s ease-in-out infinite;}
+  @keyframes blink{0%,100%{opacity:1;} 50%{opacity:0.3;}}
+
+  header{position:sticky; top:0; z-index:50; background:var(--ink); border-bottom:1px solid var(--line-dark);}
+  nav.wrap{display:flex; align-items:center; justify-content:space-between; height:76px;}
+  .brand{display:flex; flex-direction:column; line-height:1.05;}
+  .brand-mark{font-family:var(--font-display); font-weight:700; font-size:22px; color:var(--paper);}
+  .brand-sub{font-family:var(--font-mono); font-size:10px; letter-spacing:0.22em; color:var(--steel); margin-top:3px;}
+  .nav-links{display:flex; align-items:center; gap:34px;}
+  .nav-links a{font-size:14px; color:var(--paper-dim); font-weight:500;}
+  .nav-links a.active{color:var(--amber);}
+  .btn{display:inline-flex; align-items:center; gap:8px; font-weight:600; font-size:14px; padding:11px 20px; border-radius:2px; border:1px solid transparent; cursor:pointer;}
+  .btn-amber{background:var(--amber); color:var(--ink);}
+
+  .page-hero{background:var(--ink); color:var(--paper); padding:64px 0 48px;}
+  .page-hero h1{font-size:clamp(28px,3.4vw,42px); margin:14px 0 12px;}
+  .page-hero p{color:var(--paper-dim); max-width:60ch; font-size:15px;}
+  .crumb{font-family:var(--font-mono); font-size:12px; color:var(--steel); margin-top:18px;}
+
+  .cat-nav{background:var(--paper-dim); border-bottom:1px solid var(--line-light); position:sticky; top:76px; z-index:40;}
+  .cat-nav .wrap{display:flex; gap:26px; height:52px; align-items:center; overflow-x:auto;}
+  .cat-nav a{font-family:var(--font-mono); font-size:12px; color:var(--steel); white-space:nowrap; letter-spacing:0.04em;}
+  .cat-nav a:hover{color:var(--rust);}
+
+  section.cat{padding:64px 0; border-bottom:1px solid var(--line-light);}
+  .cat-head{display:flex; align-items:baseline; gap:16px; margin-bottom:34px;}
+  .cat-head h2{font-size:24px;}
+  .cat-head .count{font-family:var(--font-mono); font-size:12px; color:var(--steel);}
+  .cat-desc{color:var(--steel); font-size:14px; max-width:60ch; margin-bottom:32px;}
+
+  .prod-list{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line-light); border:1px solid var(--line-light);}
+  .prod-card{background:var(--paper); padding:26px 24px; display:flex; flex-direction:column; min-height:190px; transition:background 0.15s ease;}
+  .prod-card:hover{background:#fff;}
+  .prod-badge{font-family:var(--font-mono); font-size:10px; letter-spacing:0.08em; color:var(--rust); margin-bottom:10px;}
+  .prod-badge.legacy{color:var(--steel);}
+  .prod-card h3{font-size:16px; margin-bottom:8px;}
+  .prod-card p{font-size:13px; color:var(--steel); flex:1;}
+  .prod-foot{display:flex; justify-content:space-between; align-items:center; margin-top:16px;}
+  .prod-link{font-family:var(--font-mono); font-size:11.5px;}
+  .prod-quote{font-family:var(--font-mono); font-size:11px; color:var(--amber-dim); border:1px solid var(--line-light); padding:6px 10px;}
+  .prod-quote:hover{border-color:var(--amber);}
+
+  footer{background:var(--ink); color:var(--steel); padding:40px 0; font-family:var(--font-mono); font-size:12px; text-align:center;}
+  footer a{color:var(--paper-dim);}
+  .foot-disclaimer{max-width:60ch; margin:14px auto 0; color:var(--steel);}
+
+  @media (max-width:920px){
+    .nav-links{display:none;}
+    .prod-list{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:560px){
+    .prod-list{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer-strip"><strong>Unofficial concept redesign</strong> — created independently as a design demo. Not affiliated with, endorsed by, or published on behalf of Keltech Communications Inc.</div>
+
+<header>
+  <nav class="wrap">
+    <div class="brand"><span class="brand-mark">KELTECH</span><span class="brand-sub">COMMUNICATIONS</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="index.html#rentals">Rentals</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#about">About Us</a>
+    </div>
+    <a class="btn btn-amber" href="quote.html">Request a Quote</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">CATALOG</span>
+    <h1>Two-way radio, applications &amp; accessories</h1>
+    <p>Authorized Motorola dealer. Every product below is quote-only — pricing and availability are confirmed directly with our team, not sold online.</p>
+    <div class="crumb">Home / Products</div>
+  </div>
+</section>
+
+<nav class="cat-nav">
+  <div class="wrap">
+    <a href="#handhelds">Handhelds</a>
+    <a href="#mobiles">Mobiles</a>
+    <a href="#repeaters">Repeaters</a>
+    <a href="#applications">Applications</a>
+  </div>
+</nav>
+
+<section class="cat" id="handhelds">
+  <div class="wrap">
+    <div class="cat-head"><h2>Handhelds</h2><span class="count">6 models</span></div>
+    <p class="cat-desc">Portable two-way radios, from entry-level analog to P25 digital and intrinsically safe variants for hazardous environments.</p>
+    <div class="prod-list">
+      <div class="prod-card">
+        <span class="prod-badge">MOTOROLA</span>
+        <h3>CP200d</h3>
+        <p>Simple, affordable entry-level portable that connects your workforce efficiently.</p>
+        <div class="prod-foot"><a class="prod-link" href="product.html?id=cp200d">View details →</a><a class="prod-quote" href="quote.html?product=CP200d">Quote</a></div>
+      </div>
+      <div class="prod-card">
+        <span class="prod-badge">MOTOROLA / MOTOTRBO</span>
+        <h3>XPR6550</h3>
+        <p>Digital MOTOTRBO portable with GPS, IP-linked wide-area coverage and an extensive data application ecosystem.</p>
+        <div class="prod-foot"><a class="prod-link" href="product.html?id=xpr6550">View details →</a><a class="prod-quote" href="quote.html?product=XPR6550">Quote</a></div>
+      </div>
+      <div class="prod-card">
+        <span class="prod-badge">MOTOROLA / P25</span>
+        <h3>APX1000</h3>
+        <p>Compact P25 portable with the full look and feel of the APX family, built for durable government and public works use.</p>
+        <div class="prod-foot"><a class="prod-link" href="product.html?id=apx1000">View details →</a><a class="prod-quote" href="quote.html?product=APX1000">Quote</a></div>
+      </div>
+      <div class="prod-card">
+        <span class="prod-badge">MOTOROLA / P25</span>
+        <h3>APX4000</h3>
+        <p>The smallest P25 Phase 2 TDMA-capable portable in the APX line, built for demanding field conditions.</p>
+        <div class="prod-foot"><a class="prod-link" href="product.html?id=apx4000">View details →</a><a class="prod-quote" href="quote.html?product=APX4000">Quote</a></div>
+      </div>
+      <div class="prod-card">
+        <span class="prod-badge">MOTOROLA / INTRINSICALLY SAFE</span>
+        <h3>MTX4550</h3>
+        <p>CSA-certified intrinsically safe handheld, purpose-built for hazardous-location work such as oilfield and industrial sites.</p>
+        <div class="prod-foot"><a class="prod-link" href="product.html?id=mtx4550">View details →</a><a class="prod-quote" href="quote.html?product=MTX4550">Quote</a></div>
+      </div>
+      <div class="prod-card">
+        <span class="prod-badge legacy">LEGACY — PARTS &amp; ACCESSORIES ONLY</span>
+        <h3>HT1250</h3>
+        <p>No longer manufactured. Accessories and replacement parts remain available through Keltech.</p>
+        <div class="prod-foot"><a class="prod-link" href="product.html?id=ht1250">View details →</a><a class="prod-quote" href="quote.html?product=HT1250">Quote</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cat" id="mobiles">
+  <div class="wrap">
+    <div class="cat-head"><h2>Mobiles</h2><span class="count">2 models</span></div>
+    <p class="cat-desc">Vehicle and fixed-mount radios for fleet, dispatch and plant communications.</p>
+    <div class="prod-list">
+      <div class="prod-card">
+        <span class="prod-badge">MOTOROLA / P25</span>
+        <h3>APX4500</h3>
+        <p>Mission-critical mobile radio built for commercial and public-safety vehicle installations.</p>
+        <div class="prod-foot"><a class="prod-link" href="product.html?id=apx4500">View details →</a><a class="prod-quote" href="quote.html?product=APX4500">Quote</a></div>
+      </div>
+      <div class="prod-card">
+        <span class="prod-badge legacy">LEGACY — PARTS &amp; ACCESSORIES ONLY</span>
+        <h3>CM300</h3>
+        <p>No longer manufactured. Accessories and replacement parts remain available through Keltech.</p>
+        <div class="prod-foot"><a class="prod-link" href="product.html?id=cm300">View details →</a><a class="prod-quote" href="quote.html?product=CM300">Quote</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cat" id="repeaters">
+  <div class="wrap">
+    <div class="cat-head"><h2>Repeaters</h2><span class="count">1 model</span></div>
+    <p class="cat-desc">Fixed and vehicular repeater systems for extending coverage across sites and mobile response units.</p>
+    <div class="prod-list">
+      <div class="prod-card">
+        <span class="prod-badge">MOTOROLA / P25</span>
+        <h3>P25 DVRS</h3>
+        <p>Digital Vehicular Repeater System — small, rugged and self-contained for rapid, temporary coverage extension.</p>
+        <div class="prod-foot"><a class="prod-link" href="product.html?id=p25dvrs">View details →</a><a class="prod-quote" href="quote.html?product=P25 DVRS">Quote</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cat" id="applications" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="cat-head"><h2>Applications</h2><span class="count">4 models</span></div>
+    <p class="cat-desc">Dispatch, SCADA/telemetry and paging systems that tie a two-way network into day-to-day operations.</p>
+    <div class="prod-list">
+      <div class="prod-card">
+        <span class="prod-badge">MOTOROLA / DISPATCH</span>
+        <h3>MC1000</h3>
+        <p>Compact, cost-effective deskset console allowing remote control of radio functions from a desktop.</p>
+        <div class="prod-foot"><a class="prod-link" href="product.html?id=mc1000">View details →</a><a class="prod-quote" href="quote.html?product=MC1000">Quote</a></div>
+      </div>
+      <div class="prod-card">
+        <span class="prod-badge">MOTOROLA / SCADA</span>
+        <h3>ACE1000</h3>
+        <p>Versatile remote terminal unit built to deliver timely, reliable SCADA and telemetry communications.</p>
+        <div class="prod-foot"><a class="prod-link" href="product.html?id=ace1000">View details →</a><a class="prod-quote" href="quote.html?product=ACE1000">Quote</a></div>
+      </div>
+      <div class="prod-card">
+        <span class="prod-badge">MOTOROLA / SCADA</span>
+        <h3>ACE3600</h3>
+        <p>Remote terminal unit combining the local processing power of a PLC with SCADA-grade communications.</p>
+        <div class="prod-foot"><a class="prod-link" href="product.html?id=ace3600">View details →</a><a class="prod-quote" href="quote.html?product=ACE3600">Quote</a></div>
+      </div>
+      <div class="prod-card">
+        <span class="prod-badge">MOTOROLA / PAGING</span>
+        <h3>MINITOR VI</h3>
+        <p>Two-tone voice pager purpose-built for fire departments and other emergency response organizations.</p>
+        <div class="prod-foot"><a class="prod-link" href="product.html?id=minitor6">View details →</a><a class="prod-quote" href="quote.html?product=MINITOR VI">Quote</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Keltech Communications Inc. · <a href="index.html">Home</a> · <a href="quote.html">Request a Quote</a></div>
+    <p class="foot-disclaimer">This is an unofficial concept redesign built as a design demo — not affiliated with or published by Keltech Communications Inc. Product names and trademarks belong to their respective owners.</p>
+  </div>
+</footer>
+
+<div class="demo-badge">DEMO CONCEPT — NOT LIVE</div>
+
+</body>
+</html>

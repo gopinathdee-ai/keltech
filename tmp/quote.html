@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request a Quote — Keltech Communications</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10171B; --ink-soft:#1A252B; --paper:#EFEDE4; --paper-dim:#E4E1D4;
+    --pine:#2B3B36; --steel:#5B7480; --amber:#E8A23D; --amber-dim:#C77F1F; --rust:#C1531B;
+    --line-dark:rgba(239,237,228,0.14); --line-light:rgba(16,23,27,0.13);
+    --font-display:'Space Grotesk', sans-serif; --font-body:'IBM Plex Sans', sans-serif; --font-mono:'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--paper); color:var(--ink); font-family:var(--font-body); line-height:1.5; -webkit-font-smoothing:antialiased;}
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:640px; margin:0 auto; padding:0 28px;}
+  .eyebrow{font-family:var(--font-mono); font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--amber-dim); display:flex; align-items:center; gap:10px;}
+  .eyebrow::before{content:''; width:18px; height:1px; background:var(--amber-dim); display:inline-block;}
+  h1{font-family:var(--font-display); font-weight:600; letter-spacing:-0.01em;}
+  :focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+
+  .disclaimer-strip{background:var(--ink-soft); color:var(--steel); text-align:center; font-family:var(--font-mono); font-size:11.5px; padding:10px 20px; border-bottom:1px solid var(--line-dark);}
+  .disclaimer-strip strong{color:var(--amber-dim);}
+  .demo-badge{position:fixed; bottom:20px; right:20px; z-index:999; background:var(--ink); color:var(--amber); font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; padding:10px 16px; border:1px solid var(--amber-dim); box-shadow:0 4px 18px rgba(0,0,0,0.35); display:flex; align-items:center; gap:8px; text-transform:uppercase;}
+  .demo-badge::before{content:''; width:7px; height:7px; border-radius:50%; background:var(--rust); display:inline-block; animation:blink 2s ease-in-out infinite;}
+  @keyframes blink{0%,100%{opacity:1;} 50%{opacity:0.3;}}
+
+  header{position:sticky; top:0; z-index:50; background:var(--ink); border-bottom:1px solid var(--line-dark);}
+  nav.wrap-full{max-width:1180px; margin:0 auto; padding:0 28px; display:flex; align-items:center; justify-content:space-between; height:76px;}
+  .brand{display:flex; flex-direction:column; line-height:1.05;}
+  .brand-mark{font-family:var(--font-display); font-weight:700; font-size:22px; color:var(--paper);}
+  .brand-sub{font-family:var(--font-mono); font-size:10px; letter-spacing:0.22em; color:var(--steel); margin-top:3px;}
+  .nav-links{display:flex; align-items:center; gap:34px;}
+  .nav-links a{font-size:14px; color:var(--paper-dim); font-weight:500;}
+
+  .page-head{padding:56px 0 8px;}
+  .page-head h1{font-size:clamp(26px,3vw,34px); margin:14px 0 12px;}
+  .page-head p{color:var(--steel); font-size:14.5px; max-width:52ch;}
+  .quote-note{background:var(--pine); color:var(--paper); font-family:var(--font-mono); font-size:12px; padding:14px 18px; margin:24px 0 8px; border-left:3px solid var(--amber);}
+
+  form{padding:32px 0 90px;}
+  .field{margin-bottom:20px;}
+  .field label{display:block; font-family:var(--font-mono); font-size:11.5px; letter-spacing:0.06em; color:var(--steel); margin-bottom:8px; text-transform:uppercase;}
+  .field input, .field textarea, .field select{
+    width:100%; padding:12px 14px; background:#fff; border:1px solid var(--line-light);
+    font-family:var(--font-body); font-size:14.5px; color:var(--ink); border-radius:2px;
+  }
+  .field textarea{resize:vertical; min-height:100px;}
+  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .btn{display:inline-flex; align-items:center; gap:8px; font-weight:600; font-size:14px; padding:13px 24px; border-radius:2px; border:1px solid transparent; cursor:pointer;}
+  .btn-amber{background:var(--amber); color:var(--ink);}
+  .btn-amber:disabled{opacity:0.6; cursor:default;}
+
+  .confirm{display:none; background:var(--ink); color:var(--paper); padding:36px 32px; margin-top:26px; border:1px solid var(--line-dark);}
+  .confirm.show{display:block;}
+  .confirm .eyebrow{color:var(--amber);}
+  .confirm h2{font-family:var(--font-display); font-size:20px; margin:12px 0 10px;}
+  .confirm p{color:var(--paper-dim); font-size:14px; max-width:48ch;}
+
+  footer{background:var(--ink); color:var(--steel); padding:40px 0; font-family:var(--font-mono); font-size:12px; text-align:center;}
+  footer a{color:var(--paper-dim);}
+  .foot-disclaimer{max-width:60ch; margin:14px auto 0; color:var(--steel);}
+
+  @media (max-width:600px){
+    .field-row{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer-strip"><strong>Unofficial concept redesign</strong> — created independently as a design demo. Not affiliated with, endorsed by, or published on behalf of Keltech Communications Inc.</div>
+
+<header>
+  <nav class="wrap-full">
+    <div class="brand"><span class="brand-mark">KELTECH</span><span class="brand-sub">COMMUNICATIONS</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="index.html#services">Services</a>
+    </div>
+  </nav>
+</header>
+
+<div class="wrap">
+  <div class="page-head">
+    <span class="eyebrow">GET STARTED</span>
+    <h1>Request a Quote</h1>
+    <p>Tell us about your products and services needs and a representative from Keltech Communications will review your request and get back to you.</p>
+    <div class="quote-note" id="prefillNote" style="display:none;"></div>
+  </div>
+
+  <form id="quoteForm">
+    <div class="field">
+      <label for="name">Full name</label>
+      <input type="text" id="name" required>
+    </div>
+    <div class="field-row">
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="field">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone">
+      </div>
+    </div>
+    <div class="field">
+      <label for="company">Company / operation</label>
+      <input type="text" id="company">
+    </div>
+    <div class="field">
+      <label for="interest">Product or service you're inquiring about</label>
+      <input type="text" id="interest">
+    </div>
+    <div class="field">
+      <label for="message">Details</label>
+      <textarea id="message" placeholder="Tell us about your site, timeline, and what you're trying to solve."></textarea>
+    </div>
+    <button type="submit" class="btn btn-amber" id="submitBtn">Submit Request</button>
+  </form>
+
+  <div class="confirm" id="confirmBox">
+    <span class="eyebrow">DEMO MODE</span>
+    <h2>This form does not send anywhere</h2>
+    <p>In a live build, this request would route directly to Keltech's team. In this concept demo, nothing was transmitted or stored — this confirmation is just to show the intended experience.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap" style="max-width:1180px;">
+    <div>© 2026 Keltech Communications Inc. · <a href="index.html">Home</a> · <a href="products.html">Products</a></div>
+    <p class="foot-disclaimer">This is an unofficial concept redesign built as a design demo — not affiliated with or published by Keltech Communications Inc. This form is non-functional by design and does not transmit or store any data.</p>
+  </div>
+</footer>
+
+<div class="demo-badge">DEMO CONCEPT — NOT LIVE</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const product = params.get('product');
+  if(product){
+    document.getElementById('interest').value = product;
+    const note = document.getElementById('prefillNote');
+    note.style.display = 'block';
+    note.textContent = `Pre-filled from: ${product}`;
+  }
+
+  document.getElementById('quoteForm').addEventListener('submit', function(e){
+    e.preventDefault(); // demo-safe: never actually submits anywhere
+    const btn = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = 'Submitted (demo)';
+    document.getElementById('confirmBox').classList.add('show');
+    document.getElementById('confirmBox').scrollIntoView({behavior:'smooth', block:'center'});
+  });
+</script>
+
+</body>
+</html>
