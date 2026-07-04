@@ -213,13 +213,13 @@ header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--paper);
-  border-bottom: 1px solid var(--line-light);
+  background: var(--ink);
+  border-bottom: 1px solid var(--line-dark);
 }
 
 .disclaimer-strip {
   background: var(--ink-soft);
-  color: var(--steel);
+  color: white;
   text-align: center;
   font-family: var(--font-mono);
   font-size: 11.5px;
@@ -229,7 +229,7 @@ header {
 }
 
 .disclaimer-strip strong {
-  color: var(--amber-dim);
+  color: white;
 }
 
 nav.wrap {
@@ -249,7 +249,7 @@ nav.wrap {
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 22px;
-  color: var(--ink);
+  color: var(--paper-dim);
   letter-spacing: 0.02em;
 }
 
@@ -257,7 +257,7 @@ nav.wrap {
   font-family: var(--font-mono);
   font-size: 10px;
   letter-spacing: 0.22em;
-  color: var(--steel);
+  color: var(--paper-dim);
   margin-top: 3px;
 }
 
@@ -273,7 +273,7 @@ nav.wrap {
 
 .nav-links > .nav-item > a {
   font-size: 14px;
-  color: var(--ink);
+  color: var(--paper-dim);
   font-weight: 500;
   position: relative;
   padding: 26px 0;
@@ -349,13 +349,13 @@ nav.wrap {
   bottom: 20px;
   right: 20px;
   z-index: 999;
-  background: var(--ink);
-  color: var(--amber);
+  background: var(--rust);
+  color: white;
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.12em;
   padding: 10px 16px;
-  border: 1px solid var(--amber-dim);
+  border: none;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
   display: flex;
   align-items: center;
@@ -368,7 +368,7 @@ nav.wrap {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--rust);
+  background: white;
   display: inline-block;
   animation: blink 2s ease-in-out infinite;
 }
