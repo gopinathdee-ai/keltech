@@ -62,7 +62,10 @@ export default function Navigation() {
             Products
           </Link>
           {activeDropdown === 'products' && (
-            <div className="dropdown" style={{
+            <div className="dropdown"
+              onMouseEnter={() => handleMouseEnter('products')}
+              onMouseLeave={handleMouseLeave}
+              style={{
               position: 'absolute',
               top: '100%',
               left: '0',
@@ -95,7 +98,10 @@ export default function Navigation() {
             Rentals
           </Link>
           {activeDropdown === 'rentals' && (
-            <div className="dropdown" style={{
+            <div className="dropdown"
+              onMouseEnter={() => handleMouseEnter('rentals')}
+              onMouseLeave={handleMouseLeave}
+              style={{
               position: 'absolute',
               top: '100%',
               left: '0',
@@ -127,7 +133,10 @@ export default function Navigation() {
             Services
           </Link>
           {activeDropdown === 'services' && (
-            <div className="dropdown" style={{
+            <div className="dropdown"
+              onMouseEnter={() => handleMouseEnter('services')}
+              onMouseLeave={handleMouseLeave}
+              style={{
               position: 'absolute',
               top: '100%',
               left: '0',
@@ -159,7 +168,10 @@ export default function Navigation() {
             About Us
           </Link>
           {activeDropdown === 'about' && (
-            <div className="dropdown" style={{
+            <div className="dropdown"
+              onMouseEnter={() => handleMouseEnter('about')}
+              onMouseLeave={handleMouseLeave}
+              style={{
               position: 'absolute',
               top: '100%',
               left: '0',
