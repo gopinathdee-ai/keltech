@@ -35,22 +35,22 @@ export default function Navigation() {
         <div className="brand" style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
           <span className="brand-mark" style={{
             fontFamily: 'var(--font-display)',
-            fontWeight: '600',
-            fontSize: '14px',
+            fontWeight: '700',
+            fontSize: '18px',
             letterSpacing: '0.05em',
             color: 'var(--paper-dim)',
           }}>KELTECH</span>
           <span className="brand-sub" style={{
             fontFamily: 'var(--font-display)',
-            fontWeight: '500',
-            fontSize: '10px',
+            fontWeight: '600',
+            fontSize: '12px',
             letterSpacing: '0.1em',
             color: 'var(--paper-dim)',
           }}>COMMUNICATIONS</span>
         </div>
       </Link>
 
-      <div className="nav-links" style={{ display: 'flex', gap: '40px', flex: 1, marginLeft: '60px' }}>
+      <div className="nav-links" style={{ display: 'flex', gap: '40px', flex: 1, justifyContent: 'center' }}>
         <div className="nav-item" style={{ position: 'relative' }}
           onMouseEnter={() => handleMouseEnter('products')}
           onMouseLeave={handleMouseLeave}>
@@ -79,7 +79,7 @@ export default function Navigation() {
               marginTop: '0',
               zIndex: 10,
             }}>
-              <a href="/products#handheels" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Handheels</a>
+              <a href="/products#handhelds" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Handhelds</a>
               <a href="/products#mobiles" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Mobiles</a>
               <a href="/products#repeaters" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Repeaters</a>
               <a href="/products#applications" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none' }}>Applications</a>
@@ -116,7 +116,7 @@ export default function Navigation() {
               zIndex: 10,
             }}>
               <a href="#" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Equipment</a>
-              <a href="#" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Guarantee Policy</a>
+              <a href="/rentals/guarantee-policy" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Guarantee Policy</a>
               <a href="/terms-conditions" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none' }}>Terms &amp; Conditions</a>
             </div>
           )}

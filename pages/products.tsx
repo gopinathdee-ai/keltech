@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 
 const PRODUCTS = {
-  handheals: [
+  handhelds: [
     { id: 'cp200d', name: 'CP200d', badge: 'MOTOROLA', desc: 'Simple, affordable entry-level portable that connects your workforce efficiently.' },
     { id: 'xpr6550', name: 'XPR6550', badge: 'MOTOROLA / MOTOTRBO', desc: 'Digital MOTOTRBO portable with GPS, IP-linked wide-area coverage and an extensive data application ecosystem.' },
     { id: 'apx1000', name: 'APX1000', badge: 'MOTOROLA / P25', desc: 'Compact P25 portable with the full look and feel of the APX family, built for durable government and public works use.' },
@@ -32,48 +32,49 @@ export default function Products() {
         <title>Products — Keltech Communications</title>
       </Head>
 
-      <section style={{ padding: '60px 28px', backgroundColor: 'var(--paper-dim)' }}>
-        <div className="wrap">
+      <div style={{ maxWidth: '920px', margin: '0 auto', padding: '0 28px' }}>
+        <div style={{ padding: '20px 0', marginBottom: '0' }} className="crumb">Home / Products</div>
+
+        <section style={{ padding: '32px 0', marginBottom: '0', borderBottom: '1px solid var(--line-light)' }}>
           <span className="eyebrow">CATALOG</span>
-          <h1 style={{ fontSize: '48px', margin: '16px 0 24px' }}>Two-way radio, applications &amp; accessories</h1>
-          <p style={{ fontSize: '18px', color: 'var(--steel)', marginBottom: '20px' }}>Authorized Motorola dealer. Every product below is quote-only — pricing and availability are confirmed directly with our team, not sold online.</p>
-          <div className="crumb">Home / Products</div>
-        </div>
-      </section>
+          <h1 style={{ fontSize: '32px', margin: '12px 0 16px' }}>Two-way radio, applications &amp; accessories</h1>
+          <p style={{ fontSize: '16px', color: 'var(--steel)', lineHeight: '1.6', margin: '0' }}>Authorized Motorola dealer. Every product below is quote-only — pricing and availability are confirmed directly with our team, not sold online.</p>
+        </section>
+      </div>
 
       {Object.entries(PRODUCTS).map(([category, products]) => (
-        <section key={category} style={{ borderBottom: '1px solid var(--line-light)', padding: '60px 0' }}>
-          <div className="wrap" style={{ maxWidth: '1180px' }}>
-            <h2 style={{ fontSize: '32px', marginBottom: '12px' }}>
+        <section key={category} id={category} style={{ borderBottom: '1px solid var(--line-light)', padding: '28px 0' }}>
+          <div style={{ maxWidth: '920px', margin: '0 auto', padding: '0 28px' }}>
+            <h2 style={{ fontSize: '18px', marginBottom: '4px', fontWeight: '600', margin: '0 0 4px 0' }}>
               {category.charAt(0).toUpperCase() + category.slice(1)}
             </h2>
-            <span style={{ color: 'var(--steel)', fontSize: '14px' }}>{products.length} {products.length === 1 ? 'model' : 'models'}</span>
+            <span style={{ color: 'var(--steel)', fontSize: '13px' }}>{products.length} {products.length === 1 ? 'model' : 'models'}</span>
 
-            <p style={{ color: 'var(--steel)', marginTop: '20px', marginBottom: '40px', fontSize: '16px', lineHeight: '1.75' }}>
-              {category === 'handheals' && 'Portable two-way radios, from entry-level analog to P25 digital and intrinsically safe variants for hazardous environments.'}
+            <p style={{ color: 'var(--steel)', marginTop: '8px', marginBottom: '16px', fontSize: '14px', lineHeight: '1.6', margin: '8px 0 16px 0' }}>
+              {category === 'handhelds' && 'Portable two-way radios, from entry-level analog to P25 digital and intrinsically safe variants for hazardous environments.'}
               {category === 'mobiles' && 'Vehicle and fixed-mount radios for fleet, dispatch and plant communications.'}
               {category === 'repeaters' && 'Fixed and vehicular repeater systems for extending coverage across sites and mobile response units.'}
               {category === 'applications' && 'Dispatch, SCADA/telemetry and paging systems that tie a two-way network into day-to-day operations.'}
             </p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '24px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
               {products.map((product) => (
-                <div key={product.id} style={{ background: 'var(--paper-dim)', padding: '24px', borderRadius: '4px', border: '1px solid var(--line-light)' }}>
+                <div key={product.id} style={{ background: 'var(--paper-dim)', padding: '20px', borderRadius: '4px', border: '1px solid var(--line-light)' }}>
                   {product.legacy && (
-                    <div style={{ background: 'var(--rust)', color: 'white', padding: '6px 12px', borderRadius: '4px', fontSize: '11px', fontWeight: '600', marginBottom: '12px', display: 'inline-block' }}>
+                    <div style={{ background: 'var(--rust)', color: 'white', padding: '4px 10px', borderRadius: '4px', fontSize: '10px', fontWeight: '600', marginBottom: '10px', display: 'inline-block' }}>
                       LEGACY — PARTS &amp; ACCESSORIES ONLY
                     </div>
                   )}
-                  <span style={{ color: 'var(--amber)', fontSize: '12px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '8px' }}>
+                  <span style={{ color: 'var(--amber)', fontSize: '11px', fontWeight: '600', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '6px' }}>
                     {product.badge}
                   </span>
-                  <h3 style={{ fontSize: '20px', marginBottom: '12px' }}>{product.name}</h3>
-                  <p style={{ color: 'var(--ink)', fontSize: '15px', lineHeight: '1.6', marginBottom: '20px' }}>{product.desc}</p>
-                  <div style={{ display: 'flex', gap: '12px' }}>
-                    <Link href={`/products/${product.id}`} style={{ color: 'var(--amber)', fontSize: '14px', fontWeight: '500' }}>
+                  <h3 style={{ fontSize: '16px', marginBottom: '10px', margin: '0 0 10px 0', fontWeight: '600' }}>{product.name}</h3>
+                  <p style={{ color: 'var(--ink)', fontSize: '14px', lineHeight: '1.6', marginBottom: '16px', margin: '0 0 16px 0' }}>{product.desc}</p>
+                  <div style={{ display: 'flex', gap: '10px' }}>
+                    <Link href={`/products/${product.id}`} style={{ color: 'var(--amber)', fontSize: '13px', fontWeight: '500' }}>
                       View details →
                     </Link>
-                    <Link href={`/quote?product=${product.name}`} className="btn" style={{ background: 'var(--amber)', color: 'var(--ink)', padding: '6px 12px', borderRadius: '3px', fontSize: '14px' }}>
+                    <Link href={`/quote?product=${product.name}`} className="btn" style={{ background: 'var(--amber)', color: 'var(--ink)', padding: '6px 12px', borderRadius: '3px', fontSize: '13px', fontWeight: '500' }}>
                       Quote
                     </Link>
                   </div>

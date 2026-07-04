@@ -16,108 +16,108 @@ export default function WideAreaTowerSystem() {
         <title>Wide Area Tower System — Keltech Communications</title>
       </Head>
 
-      <div style={{ maxWidth: '920px', margin: '0 auto', padding: '20px 28px' }}>
-        <div className="crumb" style={{ marginBottom: '40px' }}>Home / Services / Wide Area Tower System</div>
+      <div style={{ maxWidth: '920px', margin: '0 auto', padding: '0 28px' }}>
+        <div className="crumb" style={{ padding: '20px 0', marginBottom: '0' }}>Home / Services / Wide Area Tower System</div>
 
-        <section style={{ marginBottom: '60px' }}>
+        <section style={{ padding: '32px 0', marginBottom: '0', borderBottom: '1px solid var(--line-light)' }}>
           <span className="eyebrow">TOWER SYSTEMS</span>
-          <h1 style={{ margin: '14px 0 30px', fontSize: '32px' }}>Wide area tower sites &amp; RF management</h1>
-          <p style={{ fontSize: '18px', color: 'var(--steel)', maxWidth: '60ch' }}>Premium co-location facilities with comprehensive RF administration, specialized inspection services, and safety-certified personnel supporting communications infrastructure across Alberta.</p>
+          <h1 style={{ margin: '12px 0 16px', fontSize: '32px' }}>Wide area tower sites &amp; RF management</h1>
+          <p style={{ fontSize: '16px', color: 'var(--steel)', lineHeight: '1.6', margin: '0' }}>Premium co-location facilities with comprehensive RF administration, specialized inspection services, and safety-certified personnel supporting communications infrastructure across Alberta.</p>
         </section>
 
-        <section style={{ marginBottom: '80px' }}>
-          <h2 style={{ fontSize: '24px', marginBottom: '30px' }}>Core Services</h2>
+        <section style={{ padding: '32px 0', marginBottom: '0' }}>
+          <h2 style={{ fontSize: '20px', marginBottom: '20px', fontWeight: '600', margin: '0 0 20px 0' }}>Core Services</h2>
 
-          <div style={{ marginBottom: '60px' }}>
-            <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '16px' }}>Tower Site Co-Location</h3>
-            <p style={{ color: 'var(--ink)', fontSize: '16px', lineHeight: '1.75', marginBottom: '20px' }}>We operate multiple tower co-location sites across Alberta, each equipped with:</p>
-            <ul style={{ color: 'var(--ink)', fontSize: '16px', lineHeight: '1.8', marginLeft: '20px' }}>
-              <li>Electrical utility connections with backup power capability</li>
-              <li>Fiber optic and Alberta SuperNet backbone access</li>
-              <li>Wireless backhaul for remote connectivity</li>
-              <li>Professional equipment mounting and RF management</li>
+          <div style={{ marginBottom: '20px', paddingBottom: '20px', borderBottom: '1px solid var(--line-light)' }}>
+            <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '12px', margin: '0 0 12px 0' }}>Tower Site Co-Location</h3>
+            <p style={{ color: 'var(--ink)', fontSize: '15px', lineHeight: '1.6', marginBottom: '12px', margin: '0 0 12px 0' }}>We operate multiple tower co-location sites across Alberta, each equipped with:</p>
+            <ul style={{ color: 'var(--ink)', fontSize: '15px', lineHeight: '1.6', marginLeft: '20px', margin: '0', paddingLeft: '20px' }}>
+              <li style={{ marginBottom: '4px' }}>Electrical utility connections with backup power capability</li>
+              <li style={{ marginBottom: '4px' }}>Fiber optic and Alberta SuperNet backbone access</li>
+              <li style={{ marginBottom: '4px' }}>Wireless backhaul for remote connectivity</li>
+              <li style={{ marginBottom: '4px' }}>Professional equipment mounting and RF management</li>
               <li>Secure facilities with 24/7 monitoring</li>
             </ul>
           </div>
 
-          <div style={{ marginBottom: '60px' }}>
-            <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '16px' }}>RF Administration</h3>
-            <p style={{ color: 'var(--ink)', fontSize: '16px', lineHeight: '1.75' }}>Professional RF (radio frequency) administration is critical to preventing interference and maintaining service reliability. Our team manages frequency coordination, antenna placement, and interference mitigation to ensure all equipment operates optimally.</p>
+          <div style={{ marginBottom: '20px', paddingBottom: '20px', borderBottom: '1px solid var(--line-light)' }}>
+            <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '12px', margin: '0 0 12px 0' }}>RF Administration</h3>
+            <p style={{ color: 'var(--ink)', fontSize: '15px', lineHeight: '1.6', margin: '0' }}>Professional RF (radio frequency) administration is critical to preventing interference and maintaining service reliability. Our team manages frequency coordination, antenna placement, and interference mitigation to ensure all equipment operates optimally.</p>
           </div>
 
-          <div style={{ marginBottom: '60px' }}>
-            <h3 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '16px' }}>Tower Inspections</h3>
-            <p style={{ color: 'var(--ink)', fontSize: '16px', lineHeight: '1.75' }}>We specialize in structural inspections of self-support tower systems, providing detailed assessments to ensure tower integrity and safety compliance for ongoing operations.</p>
+          <div style={{ marginBottom: '0' }}>
+            <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '12px', margin: '0 0 12px 0' }}>Tower Inspections</h3>
+            <p style={{ color: 'var(--ink)', fontSize: '15px', lineHeight: '1.6', margin: '0' }}>We specialize in structural inspections of self-support tower systems, providing detailed assessments to ensure tower integrity and safety compliance for ongoing operations.</p>
           </div>
         </section>
 
-        <section style={{ marginBottom: '80px', background: 'var(--paper-dim)', padding: '40px', borderRadius: '4px' }}>
-          <h2 style={{ fontSize: '24px', marginBottom: '30px' }}>Safety &amp; Certification</h2>
-          <p style={{ color: 'var(--ink)', fontSize: '16px', lineHeight: '1.75', marginBottom: '30px' }}>At Keltech, safety is paramount. All personnel working on tower systems maintain current certifications:</p>
+        <section style={{ padding: '32px 0', marginBottom: '0', borderTop: '1px solid var(--line-light)', borderBottom: '1px solid var(--line-light)' }}>
+          <h2 style={{ fontSize: '20px', marginBottom: '16px', fontWeight: '600', margin: '0 0 16px 0' }}>Safety &amp; Certification</h2>
+          <p style={{ color: 'var(--ink)', fontSize: '15px', lineHeight: '1.6', marginBottom: '16px', margin: '0 0 16px 0' }}>At Keltech, safety is paramount. All personnel working on tower systems maintain current certifications:</p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '16px' }}>
             <div>
-              <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '12px' }}>Fall Awareness &amp; Protection</h3>
-              <p style={{ color: 'var(--ink)', fontSize: '15px', lineHeight: '1.7' }}>Current certification required for all personnel working at height. Covers fall prevention, equipment use, and rescue procedures.</p>
+              <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '8px', margin: '0 0 8px 0' }}>Fall Awareness &amp; Protection</h3>
+              <p style={{ color: 'var(--ink)', fontSize: '15px', lineHeight: '1.6', margin: '0' }}>Current certification required for all personnel working at height. Covers fall prevention, equipment use, and rescue procedures.</p>
             </div>
             <div>
-              <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '12px' }}>High Angle Tower Rescue</h3>
-              <p style={{ color: 'var(--ink)', fontSize: '15px', lineHeight: '1.7' }}>Specialized rescue training ensures rapid and safe response in emergency situations. Certified rescue kits are maintained on all operations.</p>
+              <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '8px', margin: '0 0 8px 0' }}>High Angle Tower Rescue</h3>
+              <p style={{ color: 'var(--ink)', fontSize: '15px', lineHeight: '1.6', margin: '0' }}>Specialized rescue training ensures rapid and safe response in emergency situations. Certified rescue kits are maintained on all operations.</p>
             </div>
           </div>
 
-          <p style={{ color: 'var(--ink)', fontSize: '16px', lineHeight: '1.75', marginTop: '30px', marginBottom: '0' }}>All operations carry comprehensive insurance and maintain SECOR-accredited safety protocols across our service area.</p>
+          <p style={{ color: 'var(--ink)', fontSize: '15px', lineHeight: '1.6', margin: '0' }}>All operations carry comprehensive insurance and maintain SECOR-accredited safety protocols across our service area.</p>
         </section>
 
-        <section style={{ marginBottom: '80px' }}>
-          <h2 style={{ fontSize: '24px', marginBottom: '30px' }}>Equipment &amp; Products</h2>
-          <p style={{ color: 'var(--ink)', fontSize: '16px', lineHeight: '1.75', marginBottom: '30px' }}>As a Motorola Solutions and Hytera authorized dealer, we stock and support a full range of equipment for tower systems:</p>
+        <section style={{ padding: '32px 0', marginBottom: '0', borderBottom: '1px solid var(--line-light)' }}>
+          <h2 style={{ fontSize: '20px', marginBottom: '16px', fontWeight: '600', margin: '0 0 16px 0' }}>Equipment &amp; Products</h2>
+          <p style={{ color: 'var(--ink)', fontSize: '15px', lineHeight: '1.6', marginBottom: '16px', margin: '0 0 16px 0' }}>As a Motorola Solutions and Hytera authorized dealer, we stock and support a full range of equipment for tower systems:</p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', marginBottom: '16px' }}>
             <div>
-              <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '12px' }}>Radio Equipment</h3>
-              <ul style={{ color: 'var(--steel)', fontSize: '15px', lineHeight: '1.7', marginLeft: '20px' }}>
-                <li>Two-way radios (handhelds, mobiles)</li>
-                <li>Repeater systems</li>
-                <li>Antennas &amp; cabling</li>
+              <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '8px', margin: '0 0 8px 0' }}>Radio Equipment</h3>
+              <ul style={{ color: 'var(--steel)', fontSize: '15px', lineHeight: '1.6', marginLeft: '20px', margin: '0', paddingLeft: '20px' }}>
+                <li style={{ marginBottom: '4px' }}>Two-way radios (handhelds, mobiles)</li>
+                <li style={{ marginBottom: '4px' }}>Repeater systems</li>
+                <li style={{ marginBottom: '4px' }}>Antennas &amp; cabling</li>
                 <li>Batteries &amp; chargers</li>
               </ul>
             </div>
             <div>
-              <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '12px' }}>Control Systems</h3>
-              <ul style={{ color: 'var(--steel)', fontSize: '15px', lineHeight: '1.7', marginLeft: '20px' }}>
-                <li>Dispatch consoles</li>
-                <li>SCADA &amp; telemetry systems</li>
-                <li>Network management solutions</li>
+              <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '8px', margin: '0 0 8px 0' }}>Control Systems</h3>
+              <ul style={{ color: 'var(--steel)', fontSize: '15px', lineHeight: '1.6', marginLeft: '20px', margin: '0', paddingLeft: '20px' }}>
+                <li style={{ marginBottom: '4px' }}>Dispatch consoles</li>
+                <li style={{ marginBottom: '4px' }}>SCADA &amp; telemetry systems</li>
+                <li style={{ marginBottom: '4px' }}>Network management solutions</li>
                 <li>System integration</li>
               </ul>
             </div>
           </div>
 
-          <div style={{ marginTop: '30px' }}>
+          <div>
             <Link href="/products" className="btn btn-outline-dark">View all products</Link>
           </div>
         </section>
 
-        <section style={{ borderTop: '1px solid var(--line-light)', paddingTop: '40px' }}>
-          <h2 style={{ fontSize: '24px', marginBottom: '20px' }}>Related Services</h2>
-          <p style={{ color: 'var(--steel)', fontSize: '16px', lineHeight: '1.75', marginBottom: '24px' }}>Wide area tower systems work in concert with our other service offerings:</p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '20px', marginBottom: '30px' }}>
+        <section style={{ padding: '32px 0' }}>
+          <h2 style={{ fontSize: '20px', marginBottom: '16px', fontWeight: '600', margin: '0 0 16px 0' }}>Related Services</h2>
+          <p style={{ color: 'var(--steel)', fontSize: '15px', lineHeight: '1.6', marginBottom: '16px', margin: '0 0 16px 0' }}>Wide area tower systems work in concert with our other service offerings:</p>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '20px', marginBottom: '16px' }}>
             <div>
-              <p style={{ fontWeight: '600', marginBottom: '4px' }}>
-                <Link href="/services/licensing" style={{ color: 'var(--ink)' }}>Radio Licensing</Link>
+              <p style={{ fontWeight: '600', marginBottom: '4px', margin: '0 0 4px 0', fontSize: '15px' }}>
+                <Link href="/services/licensing" style={{ color: 'var(--ink)', textDecoration: 'none' }}>Radio Licensing</Link>
               </p>
-              <p style={{ color: 'var(--steel)', fontSize: '14px' }}>Frequency coordination and compliance</p>
+              <p style={{ color: 'var(--steel)', fontSize: '14px', margin: '0' }}>Frequency coordination and compliance</p>
             </div>
             <div>
-              <p style={{ fontWeight: '600', marginBottom: '4px' }}>
-                <Link href="/services/wireless-networking" style={{ color: 'var(--ink)' }}>Wireless Networking</Link>
+              <p style={{ fontWeight: '600', marginBottom: '4px', margin: '0 0 4px 0', fontSize: '15px' }}>
+                <Link href="/services/wireless-networking" style={{ color: 'var(--ink)', textDecoration: 'none' }}>Wireless Networking</Link>
               </p>
-              <p style={{ color: 'var(--steel)', fontSize: '14px' }}>Dedicated internet services</p>
+              <p style={{ color: 'var(--steel)', fontSize: '14px', margin: '0' }}>Dedicated internet services</p>
             </div>
             <div>
-              <p style={{ fontWeight: '600', marginBottom: '4px' }}>Equipment Rentals</p>
-              <p style={{ color: 'var(--steel)', fontSize: '14px' }}>Temporary tower &amp; site access</p>
+              <p style={{ fontWeight: '600', marginBottom: '4px', margin: '0 0 4px 0', fontSize: '15px' }}>Equipment Rentals</p>
+              <p style={{ color: 'var(--steel)', fontSize: '14px', margin: '0' }}>Temporary tower &amp; site access</p>
             </div>
           </div>
           <Link href="/contact-us" className="btn btn-amber">Discuss tower solutions</Link>

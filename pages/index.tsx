@@ -36,7 +36,7 @@ export default function Home() {
             <p className="lede">Keltech Communications designs, licenses and maintains two-way radio, wireless networking and tower infrastructure for rural and remote operations across the province.</p>
             <div className="hero-ctas">
               <Link href="/quote" className="btn btn-amber">Request a Quote</Link>
-              <a href="#services" className="btn btn-outline">View Services</a>
+              <Link href="/services" className="btn btn-outline">View Services</Link>
             </div>
             <div className="hero-facts">
               <div className="hero-fact"><span className="num">1994</span><span className="lab">Operating in Drayton Valley since</span></div>
@@ -51,65 +51,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services">
-        <div className="wrap">
-          <div className="section-head">
-            <div>
-              <span className="eyebrow">SERVICES</span>
-              <h2>Three ways we keep a site connected</h2>
-            </div>
-            <p>Licensing, network build, and the tower infrastructure underneath it — handled as one job, not handed off between vendors.</p>
-          </div>
-          <div className="services-grid">
-            <div className="svc-card">
-              <span className="svc-tag">SERVICE / LICENSING</span>
-              <h3>Licensing</h3>
-              <p>Radio frequency licensing handled end to end, so your two-way and SCADA systems are compliant and interference-free from day one.</p>
-              <Link href="/services/licensing" className="svc-link">Learn about licensing <span className="arrow">→</span></Link>
-            </div>
-            <div className="svc-card">
-              <span className="svc-tag">SERVICE / NETWORKING</span>
-              <h3>Wireless Networking</h3>
-              <p>Local and last-mile wireless networking, including managed dedicated internet access and multi-site VLAN connectivity for remote operations.</p>
-              <Link href="/services/wireless-networking" className="svc-link">Learn about networking <span className="arrow">→</span></Link>
-            </div>
-            <div className="svc-card">
-              <span className="svc-tag">SERVICE / TOWER SYSTEM</span>
-              <h3>Wide Area Tower System</h3>
-              <p>Tower site management across Alberta — electrical, fiber and SuperNet backhaul, RF interference administration, and self-support tower inspections.</p>
-              <Link href="/services/wide-area-tower-system" className="svc-link">Learn about tower services <span className="arrow">→</span></Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="story">
-        <div className="wrap story">
-          <div className="story-copy">
-            <span className="eyebrow">OUR STORY</span>
-            <h2 style={{ margin: '14px 0 22px', fontSize: 'clamp(24px,2.8vw,32px)', maxWidth: '18ch' }}>Locally owned in Drayton Valley since 1994</h2>
-            <p>Keltech Communications Inc. is a locally owned and operated communications company based in Drayton Valley, AB. The office is home base, but <strong>a great deal of field work is performed throughout Alberta</strong> — wherever rural and remote operations need reliable communications.</p>
-            <p>Keltech operates <strong>conventional repeaters at multiple sites across central and western Alberta</strong>, alongside a newer <strong>wide-area Digital MotoTRBO Trunking System</strong> that extends seamless, secure two-way coverage across an even larger area of central-west Alberta — without switching channels.</p>
-            <p>That digital trunking system relies on internet connectivity, which pairs with another line of business: in <strong>2003, Keltech became the first ISP to connect directly to Alberta SuperNet</strong> at Benalto. That connection became the model for a growing number of sites Keltech now owns and manages across the province, bringing wireless internet to rural and remote businesses that otherwise had no connectivity.</p>
-          </div>
-          <div className="story-timeline">
-            <div className="story-milestone">
-              <span className="yr">1994</span>
-              <span className="desc">Keltech Communications founded in Drayton Valley, AB.</span>
-            </div>
-            <div className="story-milestone">
-              <span className="yr">2003</span>
-              <span className="desc">First ISP to connect directly to Alberta SuperNet, at Benalto — later expanded to multiple sites provincewide.</span>
-            </div>
-            <div className="story-milestone">
-              <span className="yr">TODAY</span>
-              <span className="desc">Conventional repeater network plus a wide-area Digital MotoTRBO Trunking System across central-west Alberta. SECOR-accredited safety program.</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="credibility" id="about">
+<section className="credibility" id="about">
         <div className="wrap">
           <div className="cred-grid">
             <div className="cred-item"><span className="num">1994</span><span className="lab">Founded in Drayton Valley, AB</span></div>
