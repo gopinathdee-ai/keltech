@@ -8,12 +8,12 @@ export default function Header() {
     }}>
       <div style={{
         backgroundColor: 'var(--ink-soft)',
-        color: 'white',
+        color: 'var(--steel)',
         padding: '8px 28px',
         fontSize: '12px',
         textAlign: 'center',
       }}>
-        <strong style={{ color: 'var(--rust)' }}>Unofficial concept redesign</strong> — created independently as a design demo. Not affiliated with, endorsed by, or published on behalf of Keltech Communications Inc.
+        <strong style={{ color: 'var(--amber-dim)' }}>Unofficial concept redesign</strong> — created independently as a design demo. Not affiliated with, endorsed by, or published on behalf of Keltech Communications Inc.
       </div>
       <Navigation />
     </header>
