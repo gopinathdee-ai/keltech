@@ -115,7 +115,7 @@ export default function Navigation() {
               marginTop: '0',
               zIndex: 10,
             }}>
-              <a href="#" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Equipment</a>
+              <a href="/rentals/equipment" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Equipment</a>
               <a href="/rentals/guarantee-policy" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none', borderBottom: '1px solid var(--line-light)' }}>Guarantee Policy</a>
               <a href="/terms-conditions" style={{ padding: '12px 16px', color: 'var(--ink)', textDecoration: 'none' }}>Terms &amp; Conditions</a>
             </div>
