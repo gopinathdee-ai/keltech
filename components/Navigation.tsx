@@ -74,7 +74,7 @@ export default function Navigation() {
           onMouseLeave={() => setActiveDropdown(null)}>
           <Link href="#rentals" style={{
             textDecoration: 'none',
-            color: 'var(--ink)',
+            color: 'var(--paper-dim)',
             fontWeight: '500',
           }}>
             Rentals
@@ -106,7 +106,7 @@ export default function Navigation() {
           onMouseLeave={() => setActiveDropdown(null)}>
           <Link href="/services" style={{
             textDecoration: 'none',
-            color: 'var(--ink)',
+            color: 'var(--paper-dim)',
             fontWeight: '500',
           }}>
             Services
@@ -138,7 +138,7 @@ export default function Navigation() {
           onMouseLeave={() => setActiveDropdown(null)}>
           <Link href="/about-us" style={{
             textDecoration: 'none',
-            color: 'var(--ink)',
+            color: 'var(--paper-dim)',
             fontWeight: '500',
           }}>
             About Us
