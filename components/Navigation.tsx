@@ -1,10 +1,25 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 export default function Navigation() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = (dropdown: string) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+    setActiveDropdown(dropdown);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 300);
+  };
 
   return (
     <nav className="wrap" style={{
@@ -37,8 +52,8 @@ export default function Navigation() {
 
       <div className="nav-links" style={{ display: 'flex', gap: '40px', flex: 1, marginLeft: '60px' }}>
         <div className="nav-item" style={{ position: 'relative' }}
-          onMouseEnter={() => setActiveDropdown('products')}
-          onMouseLeave={() => setActiveDropdown(null)}>
+          onMouseEnter={() => handleMouseEnter('products')}
+          onMouseLeave={handleMouseLeave}>
           <Link href="/products" style={{
             textDecoration: 'none',
             color: 'var(--paper-dim)',
@@ -70,8 +85,8 @@ export default function Navigation() {
         </div>
 
         <div className="nav-item" style={{ position: 'relative' }}
-          onMouseEnter={() => setActiveDropdown('rentals')}
-          onMouseLeave={() => setActiveDropdown(null)}>
+          onMouseEnter={() => handleMouseEnter('rentals')}
+          onMouseLeave={handleMouseLeave}>
           <Link href="#rentals" style={{
             textDecoration: 'none',
             color: 'var(--paper-dim)',
@@ -102,8 +117,8 @@ export default function Navigation() {
         </div>
 
         <div className="nav-item" style={{ position: 'relative' }}
-          onMouseEnter={() => setActiveDropdown('services')}
-          onMouseLeave={() => setActiveDropdown(null)}>
+          onMouseEnter={() => handleMouseEnter('services')}
+          onMouseLeave={handleMouseLeave}>
           <Link href="/services" style={{
             textDecoration: 'none',
             color: 'var(--paper-dim)',
@@ -134,8 +149,8 @@ export default function Navigation() {
         </div>
 
         <div className="nav-item" style={{ position: 'relative' }}
-          onMouseEnter={() => setActiveDropdown('about')}
-          onMouseLeave={() => setActiveDropdown(null)}>
+          onMouseEnter={() => handleMouseEnter('about')}
+          onMouseLeave={handleMouseLeave}>
           <Link href="/about-us" style={{
             textDecoration: 'none',
             color: 'var(--paper-dim)',
