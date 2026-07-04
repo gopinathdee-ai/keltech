@@ -12,7 +12,7 @@ export default function Footer() {
           gridTemplateColumns: 'repeat(4, 1fr)',
           gap: '40px',
           paddingTop: '40px',
-          paddingBottom: '40px',
+          paddingBottom: '20px',
           borderBottom: '1px solid var(--line-dark)',
         }}>
           <div className="foot-brand">
