@@ -43,8 +43,8 @@ export default function Products() {
       </div>
 
       {Object.entries(PRODUCTS).map(([category, products]) => (
-        <section key={category} id={category} style={{ borderBottom: '1px solid var(--line-light)', padding: '28px 0' }}>
-          <div style={{ maxWidth: '920px', margin: '0 auto', padding: '0 28px' }}>
+        <section key={category} id={category} style={{ borderBottom: '1px solid var(--line-light)' }}>
+          <div style={{ maxWidth: '920px', margin: '0 auto', padding: '28px 28px 0 28px', position: 'sticky', top: '0', backgroundColor: 'var(--paper)', zIndex: 5 }}>
             <h2 style={{ fontSize: '18px', marginBottom: '4px', fontWeight: '600', margin: '0 0 4px 0' }}>
               {category.charAt(0).toUpperCase() + category.slice(1)}
             </h2>
