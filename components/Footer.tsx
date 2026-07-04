@@ -53,7 +53,8 @@ export default function Footer() {
           justifyContent: 'space-between',
           alignItems: 'center',
           padding: '20px 0',
-          fontSize: '14px',
+          fontSize: '12px',
+          fontFamily: 'var(--font-mono)',
           color: 'var(--steel)',
         }}>
           <span>© 2026 Keltech Communications Inc.</span>
