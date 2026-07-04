@@ -10,18 +10,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         {children}
       </main>
       <Footer />
-      <div className="demo-badge" style={{
-        position: 'fixed',
-        bottom: '20px',
-        right: '20px',
-        backgroundColor: 'var(--rust)',
-        color: 'white',
-        padding: '8px 12px',
-        borderRadius: '4px',
-        fontSize: '11px',
-        fontWeight: '600',
-        zIndex: 999,
-      }}>
+      <div className="demo-badge">
         DEMO CONCEPT — NOT LIVE
       </div>
     </div>
