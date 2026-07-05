@@ -235,14 +235,14 @@ export default function Navigation() {
       {mobileMenuOpen && (
         <div className="mobile-menu" style={{
           position: 'fixed',
-          top: '140px',
+          top: '160px',
           left: '0',
           right: '0',
           backgroundColor: 'var(--ink)',
           borderBottom: '1px solid var(--line-dark)',
           zIndex: 40,
           padding: '0',
-          maxHeight: 'calc(100vh - 140px)',
+          maxHeight: 'calc(100vh - 160px)',
           overflowY: 'auto',
         }}>
           {/* Products */}
@@ -254,17 +254,18 @@ export default function Navigation() {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 width: '100%',
-                padding: '12px 28px',
+                padding: '12px 28px 12px 28px',
                 backgroundColor: 'transparent',
                 border: 'none',
                 cursor: 'pointer',
                 color: 'var(--paper-dim)',
                 fontSize: '14px',
                 fontWeight: '500',
+                paddingRight: '16px',
               }}
             >
-              Products
-              <span style={{ transform: expandedMobileItem === 'products' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}>▼</span>
+              <span style={{ flex: 1, textAlign: 'left' }}>Products</span>
+              <span style={{ transform: expandedMobileItem === 'products' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s', marginLeft: 'auto' }}>▼</span>
             </button>
             {expandedMobileItem === 'products' && (
               <div style={{ backgroundColor: 'rgba(0,0,0,0.3)' }}>
@@ -285,17 +286,18 @@ export default function Navigation() {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 width: '100%',
-                padding: '12px 28px',
+                padding: '12px 28px 12px 28px',
                 backgroundColor: 'transparent',
                 border: 'none',
                 cursor: 'pointer',
                 color: 'var(--paper-dim)',
                 fontSize: '14px',
                 fontWeight: '500',
+                paddingRight: '16px',
               }}
             >
-              Rentals
-              <span style={{ transform: expandedMobileItem === 'rentals' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}>▼</span>
+              <span style={{ flex: 1, textAlign: 'left' }}>Rentals</span>
+              <span style={{ transform: expandedMobileItem === 'rentals' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s', marginLeft: 'auto' }}>▼</span>
             </button>
             {expandedMobileItem === 'rentals' && (
               <div style={{ backgroundColor: 'rgba(0,0,0,0.3)' }}>
@@ -315,17 +317,18 @@ export default function Navigation() {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 width: '100%',
-                padding: '12px 28px',
+                padding: '12px 28px 12px 28px',
                 backgroundColor: 'transparent',
                 border: 'none',
                 cursor: 'pointer',
                 color: 'var(--paper-dim)',
                 fontSize: '14px',
                 fontWeight: '500',
+                paddingRight: '16px',
               }}
             >
-              Services
-              <span style={{ transform: expandedMobileItem === 'services' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}>▼</span>
+              <span style={{ flex: 1, textAlign: 'left' }}>Services</span>
+              <span style={{ transform: expandedMobileItem === 'services' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s', marginLeft: 'auto' }}>▼</span>
             </button>
             {expandedMobileItem === 'services' && (
               <div style={{ backgroundColor: 'rgba(0,0,0,0.3)' }}>
@@ -345,17 +348,18 @@ export default function Navigation() {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 width: '100%',
-                padding: '12px 28px',
+                padding: '12px 28px 12px 28px',
                 backgroundColor: 'transparent',
                 border: 'none',
                 cursor: 'pointer',
                 color: 'var(--paper-dim)',
                 fontSize: '14px',
                 fontWeight: '500',
+                paddingRight: '16px',
               }}
             >
-              About Us
-              <span style={{ transform: expandedMobileItem === 'about' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}>▼</span>
+              <span style={{ flex: 1, textAlign: 'left' }}>About Us</span>
+              <span style={{ transform: expandedMobileItem === 'about' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s', marginLeft: 'auto' }}>▼</span>
             </button>
             {expandedMobileItem === 'about' && (
               <div style={{ backgroundColor: 'rgba(0,0,0,0.3)' }}>
