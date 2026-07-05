@@ -383,6 +383,10 @@ nav.wrap {
   .foot-grid {
     grid-template-columns: repeat(3, 1fr) !important;
   }
+
+  .credibility {
+    display: none !important;
+  }
 }
 
 /* Demo Badge */
