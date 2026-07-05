@@ -82,7 +82,7 @@ export default function Services() {
             </div>
             <div>
               <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '8px' }}>Safety First</h3>
-              <p style={{ color: 'var(--steel)', fontSize: '16px', lineHeight: '1.75' }}>SECOR-accredited safety program. Certified personnel with fall protection and tower rescue training on all operations.</p>
+              <p style={{ color: 'var(--steel)', fontSize: '16px', lineHeight: '1.75' }}>SECOR-accredited safety program. All authorized tower personnel are certified with Fall Awareness, Protection and High Angle Tower Rescue.</p>
             </div>
             <div>
               <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '8px' }}>Turnkey Solutions</h3>
