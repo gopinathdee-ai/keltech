@@ -343,6 +343,36 @@ nav.wrap {
   gap: 8px;
 }
 
+.hamburger {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  nav.wrap {
+    height: 56px;
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  .nav-phone {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: block !important;
+  }
+
+  .mobile-menu {
+    display: block !important;
+  }
+}
+
 /* Demo Badge */
 .demo-badge {
   position: fixed;

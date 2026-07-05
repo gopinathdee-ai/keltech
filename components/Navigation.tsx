@@ -5,6 +5,7 @@ import { useState, useRef } from 'react';
 
 export default function Navigation() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleMouseEnter = (dropdown: string) => {
@@ -208,6 +209,41 @@ export default function Navigation() {
           Request a Quote
         </Link>
       </div>
+
+      <button
+        className="hamburger"
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        style={{
+          background: 'none',
+          border: 'none',
+          cursor: 'pointer',
+          padding: '8px',
+          color: 'var(--paper-dim)',
+          fontSize: '24px',
+        }}
+        aria-label="Toggle menu"
+      >
+        ☰
+      </button>
+
+      {mobileMenuOpen && (
+        <div className="mobile-menu" style={{
+          position: 'fixed',
+          top: '113px',
+          left: '0',
+          right: '0',
+          backgroundColor: 'var(--ink)',
+          borderBottom: '1px solid var(--line-dark)',
+          zIndex: 40,
+          padding: '16px 28px',
+        }}>
+          <Link href="/products" style={{ display: 'block', padding: '12px 0', color: 'var(--paper-dim)', textDecoration: 'none' }}>Products</Link>
+          <Link href="#rentals" style={{ display: 'block', padding: '12px 0', color: 'var(--paper-dim)', textDecoration: 'none' }}>Rentals</Link>
+          <Link href="/services" style={{ display: 'block', padding: '12px 0', color: 'var(--paper-dim)', textDecoration: 'none' }}>Services</Link>
+          <Link href="/about-us" style={{ display: 'block', padding: '12px 0', color: 'var(--paper-dim)', textDecoration: 'none' }}>About Us</Link>
+          <Link href="/quote" style={{ display: 'block', padding: '12px 0', marginTop: '8px', color: 'var(--paper-dim)', textDecoration: 'none', fontWeight: '500' }}>Request a Quote</Link>
+        </div>
+      )}
     </nav>
   );
 }
