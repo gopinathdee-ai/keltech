@@ -435,6 +435,13 @@ nav.wrap {
   color: var(--paper);
   overflow: hidden;
   padding: 100px 0 80px;
+  margin-top: -116px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    margin-top: -96px;
+  }
 }
 
 .hero-topo {
