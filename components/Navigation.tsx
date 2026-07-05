@@ -254,14 +254,13 @@ export default function Navigation() {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 width: '100%',
-                padding: '12px 28px 12px 28px',
+                padding: '12px 12px 12px 28px',
                 backgroundColor: 'transparent',
                 border: 'none',
                 cursor: 'pointer',
                 color: 'var(--paper-dim)',
                 fontSize: '14px',
                 fontWeight: '500',
-                paddingRight: '8px',
               }}
             >
               <span style={{ flex: 1, textAlign: 'left' }}>Products</span>
@@ -286,14 +285,13 @@ export default function Navigation() {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 width: '100%',
-                padding: '12px 28px 12px 28px',
+                padding: '12px 12px 12px 28px',
                 backgroundColor: 'transparent',
                 border: 'none',
                 cursor: 'pointer',
                 color: 'var(--paper-dim)',
                 fontSize: '14px',
                 fontWeight: '500',
-                paddingRight: '8px',
               }}
             >
               <span style={{ flex: 1, textAlign: 'left' }}>Rentals</span>
@@ -317,14 +315,13 @@ export default function Navigation() {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 width: '100%',
-                padding: '12px 28px 12px 28px',
+                padding: '12px 12px 12px 28px',
                 backgroundColor: 'transparent',
                 border: 'none',
                 cursor: 'pointer',
                 color: 'var(--paper-dim)',
                 fontSize: '14px',
                 fontWeight: '500',
-                paddingRight: '8px',
               }}
             >
               <span style={{ flex: 1, textAlign: 'left' }}>Services</span>
@@ -348,14 +345,13 @@ export default function Navigation() {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 width: '100%',
-                padding: '12px 28px 12px 28px',
+                padding: '12px 12px 12px 28px',
                 backgroundColor: 'transparent',
                 border: 'none',
                 cursor: 'pointer',
                 color: 'var(--paper-dim)',
                 fontSize: '14px',
                 fontWeight: '500',
-                paddingRight: '8px',
               }}
             >
               <span style={{ flex: 1, textAlign: 'left' }}>About Us</span>
