@@ -245,18 +245,31 @@ export default function Navigation() {
       </button>
 
       {mobileMenuOpen && (
-        <div className="mobile-menu" style={{
-          position: 'fixed',
-          top: '160px',
-          left: '0',
-          right: '0',
-          backgroundColor: 'var(--ink)',
-          borderBottom: '1px solid var(--line-dark)',
-          zIndex: 40,
-          padding: '0',
-          maxHeight: 'calc(100vh - 160px)',
-          overflowY: 'auto',
-        }}>
+        <>
+          <div
+            onClick={() => { setMobileMenuOpen(false); setExpandedMobileItem(null); }}
+            style={{
+              position: 'fixed',
+              top: '160px',
+              left: '0',
+              right: '0',
+              bottom: '0',
+              zIndex: 39,
+            }}
+            aria-hidden="true"
+          />
+          <div className="mobile-menu" style={{
+            position: 'fixed',
+            top: '160px',
+            left: '0',
+            right: '0',
+            backgroundColor: 'var(--ink)',
+            borderBottom: '1px solid var(--line-dark)',
+            zIndex: 40,
+            padding: '0',
+            maxHeight: 'calc(100vh - 160px)',
+            overflowY: 'auto',
+          }}>
           {/* Products */}
           <div style={{ borderBottom: '1px solid var(--line-dark)' }}>
             <button
@@ -389,7 +402,8 @@ export default function Navigation() {
           }}>
             Request a Quote
           </Link>
-        </div>
+          </div>
+        </>
       )}
     </nav>
   );
