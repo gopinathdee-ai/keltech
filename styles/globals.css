@@ -44,7 +44,7 @@ body {
 
 @media (max-width: 768px) {
   body {
-    padding-top: 160px;
+    padding-top: 170px;
   }
 }
 
@@ -440,7 +440,7 @@ nav.wrap {
 
 @media (max-width: 768px) {
   .hero {
-    margin-top: -160px;
+    margin-top: -170px;
   }
 }
 
@@ -450,7 +450,7 @@ nav.wrap {
 
 @media (max-width: 768px) {
   .hero-grid {
-    padding-top: 160px;
+    padding-top: 170px;
   }
 }
 
