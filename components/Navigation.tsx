@@ -261,7 +261,7 @@ export default function Navigation() {
                 color: 'var(--paper-dim)',
                 fontSize: '14px',
                 fontWeight: '500',
-                paddingRight: '16px',
+                paddingRight: '8px',
               }}
             >
               <span style={{ flex: 1, textAlign: 'left' }}>Products</span>
@@ -293,7 +293,7 @@ export default function Navigation() {
                 color: 'var(--paper-dim)',
                 fontSize: '14px',
                 fontWeight: '500',
-                paddingRight: '16px',
+                paddingRight: '8px',
               }}
             >
               <span style={{ flex: 1, textAlign: 'left' }}>Rentals</span>
@@ -324,7 +324,7 @@ export default function Navigation() {
                 color: 'var(--paper-dim)',
                 fontSize: '14px',
                 fontWeight: '500',
-                paddingRight: '16px',
+                paddingRight: '8px',
               }}
             >
               <span style={{ flex: 1, textAlign: 'left' }}>Services</span>
@@ -355,7 +355,7 @@ export default function Navigation() {
                 color: 'var(--paper-dim)',
                 fontSize: '14px',
                 fontWeight: '500',
-                paddingRight: '16px',
+                paddingRight: '8px',
               }}
             >
               <span style={{ flex: 1, textAlign: 'left' }}>About Us</span>
