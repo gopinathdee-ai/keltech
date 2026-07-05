@@ -39,6 +39,13 @@ body {
   -webkit-font-smoothing: antialiased;
   width: 100%;
   overflow-x: hidden;
+  padding-top: 120px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 100px;
+  }
 }
 
 img, svg {
@@ -427,7 +434,24 @@ nav.wrap {
   background: var(--ink);
   color: var(--paper);
   overflow: hidden;
-  padding: 100px 0 80px;
+  padding: 0 0 80px;
+  margin-top: -120px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    margin-top: -100px;
+  }
+}
+
+.hero-grid {
+  padding-top: 120px;
+}
+
+@media (max-width: 768px) {
+  .hero-grid {
+    padding-top: 100px;
+  }
 }
 
 .hero-topo {
