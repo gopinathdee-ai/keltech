@@ -39,12 +39,12 @@ body {
   -webkit-font-smoothing: antialiased;
   width: 100%;
   overflow-x: hidden;
-  padding-top: 120px;
+  padding-top: 116px;
 }
 
 @media (max-width: 768px) {
   body {
-    padding-top: 100px;
+    padding-top: 96px;
   }
 }
 
