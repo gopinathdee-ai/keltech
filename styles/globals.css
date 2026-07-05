@@ -44,7 +44,7 @@ body {
 
 @media (max-width: 768px) {
   body {
-    padding-top: 120px;
+    padding-top: 145px;
   }
 }
 
@@ -438,8 +438,20 @@ nav.wrap {
   margin-top: -120px;
 }
 
+@media (max-width: 768px) {
+  .hero {
+    margin-top: -145px;
+  }
+}
+
 .hero-grid {
   padding-top: 120px;
+}
+
+@media (max-width: 768px) {
+  .hero-grid {
+    padding-top: 145px;
+  }
 }
 
 .hero-topo {
