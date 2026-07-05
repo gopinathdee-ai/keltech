@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 export default function Navigation() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -22,6 +22,18 @@ export default function Navigation() {
       setActiveDropdown(null);
     }, 300);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (mobileMenuOpen) {
+        setMobileMenuOpen(false);
+        setExpandedMobileItem(null);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [mobileMenuOpen]);
 
   return (
     <nav className="wrap" style={{
@@ -268,10 +280,10 @@ export default function Navigation() {
             </button>
             {expandedMobileItem === 'products' && (
               <div style={{ backgroundColor: 'rgba(0,0,0,0.3)' }}>
-                <a href="/products#handhelds" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Handhelds</a>
-                <a href="/products#mobiles" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Mobiles</a>
-                <a href="/products#repeaters" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Repeaters</a>
-                <a href="/products#applications" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Applications</a>
+                <a href="/products#handhelds" onClick={() => { setMobileMenuOpen(false); setExpandedMobileItem(null); }} style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Handhelds</a>
+                <a href="/products#mobiles" onClick={() => { setMobileMenuOpen(false); setExpandedMobileItem(null); }} style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Mobiles</a>
+                <a href="/products#repeaters" onClick={() => { setMobileMenuOpen(false); setExpandedMobileItem(null); }} style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Repeaters</a>
+                <a href="/products#applications" onClick={() => { setMobileMenuOpen(false); setExpandedMobileItem(null); }} style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Applications</a>
               </div>
             )}
           </div>
@@ -299,9 +311,9 @@ export default function Navigation() {
             </button>
             {expandedMobileItem === 'rentals' && (
               <div style={{ backgroundColor: 'rgba(0,0,0,0.3)' }}>
-                <a href="/rentals/equipment" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Equipment</a>
-                <a href="/rentals/guarantee-policy" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Guarantee Policy</a>
-                <a href="/terms-conditions" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Terms & Conditions</a>
+                <a href="/rentals/equipment" onClick={() => { setMobileMenuOpen(false); setExpandedMobileItem(null); }} style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Equipment</a>
+                <a href="/rentals/guarantee-policy" onClick={() => { setMobileMenuOpen(false); setExpandedMobileItem(null); }} style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Guarantee Policy</a>
+                <a href="/terms-conditions" onClick={() => { setMobileMenuOpen(false); setExpandedMobileItem(null); }} style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Terms & Conditions</a>
               </div>
             )}
           </div>
@@ -329,9 +341,9 @@ export default function Navigation() {
             </button>
             {expandedMobileItem === 'services' && (
               <div style={{ backgroundColor: 'rgba(0,0,0,0.3)' }}>
-                <a href="/services/licensing" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Licensing</a>
-                <a href="/services/wireless-networking" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Wireless Networking</a>
-                <a href="/services/wide-area-tower-system" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Wide Area Tower System</a>
+                <a href="/services/licensing" onClick={() => { setMobileMenuOpen(false); setExpandedMobileItem(null); }} style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Licensing</a>
+                <a href="/services/wireless-networking" onClick={() => { setMobileMenuOpen(false); setExpandedMobileItem(null); }} style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Wireless Networking</a>
+                <a href="/services/wide-area-tower-system" onClick={() => { setMobileMenuOpen(false); setExpandedMobileItem(null); }} style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Wide Area Tower System</a>
               </div>
             )}
           </div>
@@ -359,15 +371,15 @@ export default function Navigation() {
             </button>
             {expandedMobileItem === 'about' && (
               <div style={{ backgroundColor: 'rgba(0,0,0,0.3)' }}>
-                <a href="/about-us" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Our Story</a>
-                <a href="/contact-us" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Get in Touch</a>
-                <a href="/promotions" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>What's New</a>
+                <a href="/about-us" onClick={() => { setMobileMenuOpen(false); setExpandedMobileItem(null); }} style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Our Story</a>
+                <a href="/contact-us" onClick={() => { setMobileMenuOpen(false); setExpandedMobileItem(null); }} style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Get in Touch</a>
+                <a href="/promotions" onClick={() => { setMobileMenuOpen(false); setExpandedMobileItem(null); }} style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>What's New</a>
               </div>
             )}
           </div>
 
           {/* Request a Quote */}
-          <Link href="/quote" style={{
+          <Link href="/quote" onClick={() => { setMobileMenuOpen(false); setExpandedMobileItem(null); }} style={{
             display: 'block',
             padding: '12px 28px',
             color: 'var(--amber)',
