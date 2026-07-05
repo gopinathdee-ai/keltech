@@ -235,14 +235,14 @@ export default function Navigation() {
       {mobileMenuOpen && (
         <div className="mobile-menu" style={{
           position: 'fixed',
-          top: '113px',
+          top: '140px',
           left: '0',
           right: '0',
           backgroundColor: 'var(--ink)',
           borderBottom: '1px solid var(--line-dark)',
           zIndex: 40,
           padding: '0',
-          maxHeight: 'calc(100vh - 113px)',
+          maxHeight: 'calc(100vh - 140px)',
           overflowY: 'auto',
         }}>
           {/* Products */}
