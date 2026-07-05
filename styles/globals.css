@@ -375,6 +375,14 @@ nav.wrap {
   .mobile-menu {
     display: block !important;
   }
+
+  .foot-brand {
+    display: none !important;
+  }
+
+  .foot-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
 }
 
 /* Demo Badge */
