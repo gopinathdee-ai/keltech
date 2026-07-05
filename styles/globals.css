@@ -39,13 +39,6 @@ body {
   -webkit-font-smoothing: antialiased;
   width: 100%;
   overflow-x: hidden;
-  padding-top: 116px;
-}
-
-@media (max-width: 768px) {
-  body {
-    padding-top: 96px;
-  }
 }
 
 img, svg {
@@ -434,7 +427,13 @@ nav.wrap {
   background: var(--ink);
   color: var(--paper);
   overflow: hidden;
-  padding: 0 0 80px;
+  padding: 116px 0 80px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 96px;
+  }
 }
 
 .hero-topo {
