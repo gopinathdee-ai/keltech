@@ -6,6 +6,7 @@ import { useState, useRef } from 'react';
 export default function Navigation() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [expandedMobileItem, setExpandedMobileItem] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleMouseEnter = (dropdown: string) => {
@@ -212,7 +213,12 @@ export default function Navigation() {
 
       <button
         className="hamburger"
-        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        onClick={() => {
+          setMobileMenuOpen(!mobileMenuOpen);
+          if (mobileMenuOpen) {
+            setExpandedMobileItem(null);
+          }
+        }}
         style={{
           background: 'none',
           border: 'none',
@@ -235,13 +241,142 @@ export default function Navigation() {
           backgroundColor: 'var(--ink)',
           borderBottom: '1px solid var(--line-dark)',
           zIndex: 40,
-          padding: '16px 28px',
+          padding: '0',
+          maxHeight: 'calc(100vh - 113px)',
+          overflowY: 'auto',
         }}>
-          <Link href="/products" style={{ display: 'block', padding: '12px 0', color: 'var(--paper-dim)', textDecoration: 'none' }}>Products</Link>
-          <Link href="#rentals" style={{ display: 'block', padding: '12px 0', color: 'var(--paper-dim)', textDecoration: 'none' }}>Rentals</Link>
-          <Link href="/services" style={{ display: 'block', padding: '12px 0', color: 'var(--paper-dim)', textDecoration: 'none' }}>Services</Link>
-          <Link href="/about-us" style={{ display: 'block', padding: '12px 0', color: 'var(--paper-dim)', textDecoration: 'none' }}>About Us</Link>
-          <Link href="/quote" style={{ display: 'block', padding: '12px 0', marginTop: '8px', color: 'var(--paper-dim)', textDecoration: 'none', fontWeight: '500' }}>Request a Quote</Link>
+          {/* Products */}
+          <div style={{ borderBottom: '1px solid var(--line-dark)' }}>
+            <button
+              onClick={() => setExpandedMobileItem(expandedMobileItem === 'products' ? null : 'products')}
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                width: '100%',
+                padding: '12px 28px',
+                backgroundColor: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                color: 'var(--paper-dim)',
+                fontSize: '14px',
+                fontWeight: '500',
+              }}
+            >
+              Products
+              <span style={{ transform: expandedMobileItem === 'products' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}>▼</span>
+            </button>
+            {expandedMobileItem === 'products' && (
+              <div style={{ backgroundColor: 'rgba(0,0,0,0.3)' }}>
+                <a href="/products#handhelds" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Handhelds</a>
+                <a href="/products#mobiles" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Mobiles</a>
+                <a href="/products#repeaters" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Repeaters</a>
+                <a href="/products#applications" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Applications</a>
+              </div>
+            )}
+          </div>
+
+          {/* Rentals */}
+          <div style={{ borderBottom: '1px solid var(--line-dark)' }}>
+            <button
+              onClick={() => setExpandedMobileItem(expandedMobileItem === 'rentals' ? null : 'rentals')}
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                width: '100%',
+                padding: '12px 28px',
+                backgroundColor: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                color: 'var(--paper-dim)',
+                fontSize: '14px',
+                fontWeight: '500',
+              }}
+            >
+              Rentals
+              <span style={{ transform: expandedMobileItem === 'rentals' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}>▼</span>
+            </button>
+            {expandedMobileItem === 'rentals' && (
+              <div style={{ backgroundColor: 'rgba(0,0,0,0.3)' }}>
+                <a href="/rentals/equipment" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Equipment</a>
+                <a href="/rentals/guarantee-policy" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Guarantee Policy</a>
+                <a href="/terms-conditions" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Terms & Conditions</a>
+              </div>
+            )}
+          </div>
+
+          {/* Services */}
+          <div style={{ borderBottom: '1px solid var(--line-dark)' }}>
+            <button
+              onClick={() => setExpandedMobileItem(expandedMobileItem === 'services' ? null : 'services')}
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                width: '100%',
+                padding: '12px 28px',
+                backgroundColor: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                color: 'var(--paper-dim)',
+                fontSize: '14px',
+                fontWeight: '500',
+              }}
+            >
+              Services
+              <span style={{ transform: expandedMobileItem === 'services' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}>▼</span>
+            </button>
+            {expandedMobileItem === 'services' && (
+              <div style={{ backgroundColor: 'rgba(0,0,0,0.3)' }}>
+                <a href="/services/licensing" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Licensing</a>
+                <a href="/services/wireless-networking" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Wireless Networking</a>
+                <a href="/services/wide-area-tower-system" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Wide Area Tower System</a>
+              </div>
+            )}
+          </div>
+
+          {/* About Us */}
+          <div style={{ borderBottom: '1px solid var(--line-dark)' }}>
+            <button
+              onClick={() => setExpandedMobileItem(expandedMobileItem === 'about' ? null : 'about')}
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                width: '100%',
+                padding: '12px 28px',
+                backgroundColor: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                color: 'var(--paper-dim)',
+                fontSize: '14px',
+                fontWeight: '500',
+              }}
+            >
+              About Us
+              <span style={{ transform: expandedMobileItem === 'about' ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}>▼</span>
+            </button>
+            {expandedMobileItem === 'about' && (
+              <div style={{ backgroundColor: 'rgba(0,0,0,0.3)' }}>
+                <a href="/about-us" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Our Story</a>
+                <a href="/contact-us" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>Get in Touch</a>
+                <a href="/promotions" style={{ display: 'block', padding: '10px 28px 10px 48px', color: 'var(--paper-dim)', textDecoration: 'none', fontSize: '13px' }}>What's New</a>
+              </div>
+            )}
+          </div>
+
+          {/* Request a Quote */}
+          <Link href="/quote" style={{
+            display: 'block',
+            padding: '12px 28px',
+            color: 'var(--amber)',
+            textDecoration: 'none',
+            fontWeight: '600',
+            borderBottom: '1px solid var(--line-dark)',
+          }}>
+            Request a Quote
+          </Link>
         </div>
       )}
     </nav>
